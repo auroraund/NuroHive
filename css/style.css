@@ -1,49 +1,70 @@
-body {
+html {
+  font-size: 14px; /*base-font size for rem*/
+}
+html body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   background-color: rgb(20, 20, 20);
   color: rgb(180, 180, 180); /*Site-wide color scheme*/
-  font-size: 0.9rem;
 }
-body a:hover {
+html body a:hover {
   color: white;
 }
-body a {
+html body a {
   border-bottom: solid 1px;
 }
-body header {
-  height: 120px;
-  padding-inline: 30px;
+html body header {
+  height: 100px;
+  padding-inline: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px;
+  font-size: 1.1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgb(20, 20, 20);
+  transition: height 0.6s ease, padding 0.6s ease, font-size 0.6s ease, background-color 0.6s ease, border-color 0.6s ease;
 }
-body header .menu-container {
+html body header .menu-container {
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
-body main {
-  padding: 90px 30px;
+html body header.is-scrolled {
+  height: 50px;
+  font-size: 1rem;
+  background-color: rgba(20, 20, 20, 0.5);
+  border-color: transparent;
+}
+html body main {
+  padding: 60px 60px;
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 60px;
   max-width: 1200px;
   margin: auto;
+  margin-top: 100px; /* Same value as the header's height */
 }
-body main #article-section {
+html body main #article-section {
   line-height: 2rem;
 }
-body main h2 {
+html body main #dummy-section {
+  background-color: rgb(180, 180, 180); /*Site-wide color scheme*/
+  height: 300px;
+}
+html body main h2 {
   text-align: center;
   display: block;
   border: solid 1px;
   border-width: 0px 1px;
   margin-bottom: 10px;
 }
-body footer {
+html body footer {
   border-top: solid 1px;
   padding: 30px;
   display: flex;
