@@ -1,0 +1,59 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  background-color: rgb(20, 20, 20);
+  color: rgb(180, 180, 180); /*Site-wide color scheme*/
+  font-size: 0.9rem;
+
+  a {
+    &:hover {
+      color: white;
+    }
+    border-bottom: solid 1px;
+  }
+
+  header {
+    height: 120px;
+    padding-inline: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px;
+
+    .menu-container {
+      display: flex;
+      column-gap: 20px;
+    }
+  }
+
+  main {
+    padding: 90px 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+
+    #article-section {
+      line-height: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      display: block;
+      border: solid 1px;
+      border-width: 0px 1px;
+      margin-bottom: 10px;
+    }
+  }
+
+  footer {
+    border-top: solid 1px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
