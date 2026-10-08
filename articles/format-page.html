@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Apply theme state immediately (guaranteed to run before CSS loads)
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (savedTheme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // Follow OS setting if not set in localStorage
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="/css/destyle-customize.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>NuroHive</title>
+  </head>
+  <body>
+    <header id="header">
+      <h1><a href="/index.html">NuroHive</a></h1>
+      <div class="menu-container">
+        <a href="/index.html#hero-section">Top</a
+        ><a href="/index.html#works-section">Works</a
+        ><a href="/index.html#articles-section">Articles</a>
+      </div>
+      <button id="theme-toggle"></button>
+    </header>
+    <main>
+      <article id="article-main-section">
+        <h2 id="intro">Building Lightweight Web Applications</h2>
+        <p>
+          Modern web development often overcomplicates design with unnecessary
+          JavaScript and heavy dependencies. By leveraging native CSS features,
+          modern HTML, and minimal frameworks, we can deliver exceptional user
+          experiences that load instantaneously.
+        </p>
+        <p>
+          Performance should never be an afterthought. When designing digital
+          interfaces, keeping the core runtime minimal ensures that users on
+          slower network conditions or older hardware still experience smooth
+          navigation.
+        </p>
+
+        <h2 id="principles">Core Principles</h2>
+        <p>
+          Standardizing styles with CSS custom properties allows for clean code
+          maintenance without relying on bulky external frameworks.
+          Micro-interactions like link hover states and focus outlines should
+          feel quick and deliberate.
+        </p>
+        <p>
+          By prioritizing native browser capabilities, we eliminate unnecessary
+          layout shifts and maintain a seamless layout across all screen
+          dimensions.
+        </p>
+
+        <h2 id="interactions">Smooth Interactions and Design</h2>
+        <p>
+          Creating an intuitive dark mode switch requires balancing
+          responsiveness with visual comfort. Transitions during hover
+          interactions should respond immediately to provide immediate visual
+          feedback to the user.
+        </p>
+        <p>
+          When hover response times are kept under 30 milliseconds, the user
+          interface feels tactile and instantaneous, making navigation feel
+          smooth and effortless.
+        </p>
+
+        <h2 id="conclusion">Looking Ahead</h2>
+        <p>
+          As web standards evolve, features that once required complex
+          JavaScript solutions are now handled natively by modern browsers.
+          Building directly with the web platform ensures longevity and
+          maintainability for any web project.
+        </p>
+      </article>
+      <section id="dummy-section"></section>
+    </main>
+    <footer>
+      <p>Built by <a href="">Auroraund</a></p>
+      <p>© 2026 NuroHive</p>
+    </footer>
+    <script src="/js/scrolling-header.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/scroll-jump-later.js"></script>
+  </body>
+</html>

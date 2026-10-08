@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Apply theme state immediately (guaranteed to run before CSS loads)
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (savedTheme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // Follow OS setting if not set in localStorage
+        document.documentElement.classList.add("dark");
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -19,6 +31,7 @@
     <title>NuroHive</title>
   </head>
   <body>
+    <div id="page-overlay"></div>
     <header id="header">
       <h1><a href="">NuroHive</a></h1>
       <div class="menu-container">
@@ -86,6 +99,9 @@
       <section id="articles-section">
         <h2>Articles</h2>
         <p>
+          <a href="/articles/format-page.html">format-page</a>
+        </p>
+        <p>
           <a href=""
             >Minimalist Web Design: Achieving Performance and Maintainability
             with Astro and SCSS</a
@@ -143,5 +159,6 @@
     </footer>
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
+    <script src="/js/scroll-jump-later.js"></script>
   </body>
 </html>

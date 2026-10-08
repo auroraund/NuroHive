@@ -1,23 +1,35 @@
 :root {
-  //default-mode
+  // default-mode
   color: rgb(20, 20, 20);
   --hover-linktext-color: rgb(180, 180, 180);
   --theme-toggle-color: rgb(199, 0, 0);
   background-color: rgb(255, 255, 255);
   --header-bg: rgb(255, 255, 255);
+  --bg-color: rgb(255, 255, 255);
 
-  transition:
-    color 0.45s ease,
-    background-color 0.45s ease;
+  // background-color の transition を削除（色変化のアニメーションによる白チラつきを防止）
+  transition: color 0.45s ease;
 }
 
 html.dark {
-  //dark-mode
+  // dark-mode
   color: #c0c0c0;
   --hover-linktext-color: rgb(255, 255, 255);
   --theme-toggle-color: rgb(190, 233, 0);
   background-color: rgb(20, 20, 20);
   --header-bg: rgb(20, 20, 20);
+  --bg-color: rgb(20, 20, 20);
+}
+
+// 暗転用オーバーレイ
+#page-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-color); // 設定した変数と同期
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.3s ease; // 透明度だけを0.3sで変化させる
+  opacity: 1;
 }
 
 html {
@@ -158,6 +170,15 @@ html {
         display: flex;
         flex-direction: column;
         row-gap: 4px;
+
+        scroll-margin-top: 80px;
+      }
+
+      #article-main-section {
+        line-height: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
 
         scroll-margin-top: 80px;
       }

@@ -4,7 +4,8 @@
   --theme-toggle-color: rgb(199, 0, 0);
   background-color: rgb(255, 255, 255);
   --header-bg: rgb(255, 255, 255);
-  transition: color 0.45s ease, background-color 0.45s ease;
+  --bg-color: rgb(255, 255, 255);
+  transition: color 0.45s ease;
 }
 
 html.dark {
@@ -13,6 +14,17 @@ html.dark {
   --theme-toggle-color: rgb(190, 233, 0);
   background-color: rgb(20, 20, 20);
   --header-bg: rgb(20, 20, 20);
+  --bg-color: rgb(20, 20, 20);
+}
+
+#page-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-color);
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1;
 }
 
 html {
@@ -116,6 +128,13 @@ html body main #articles-section {
   display: flex;
   flex-direction: column;
   row-gap: 4px;
+  scroll-margin-top: 80px;
+}
+html body main #article-main-section {
+  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
   scroll-margin-top: 80px;
 }
 html body main #dummy-section {
