@@ -44,12 +44,36 @@
     </header>
     <main>
       <section id="hero-section">
-        <img src="/images/quaira-hero.png" alt="" />
+        <div class="slideshow-container">
+          <!-- スライド本体 -->
+          <div class="slideshow-track">
+            <div class="slide active">
+              <img src="/images/quaira-hero.png" alt="Quaira Hero Image 1" />
+            </div>
+            <div class="slide">
+              <img src="/images/gannet-hero.png" alt="Quaira Hero Image 2" />
+            </div>
+          </div>
+
+          <!-- インジケーター（ドット） -->
+          <div class="slideshow-dots">
+            <button
+              type="button"
+              class="dot active"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              type="button"
+              class="dot"
+              aria-label="Go to slide 2"
+            ></button>
+          </div>
+        </div>
       </section>
       <section id="works-section">
         <h2 class="notranslate">Works</h2>
         <p>
-          <a href="/works/work-sample-page.html">work-sample-page</a>
+          <a href="/works/gannet.html">Gannet / Icing WatterBottle / 2017</a>
         </p>
         <p>
           <a href=""
@@ -175,5 +199,6 @@
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/scroll-jump-later.js"></script>
+    <script src="/js/slideshow.js"></script>
   </body>
 </html>
