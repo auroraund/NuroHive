@@ -1,4 +1,4 @@
-/*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/*! destyle.css v4.0.15 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -193,11 +193,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -0.155em;
 }
 
 sup {
-  top: -0.5em;
+  top: -0.15em;
 }
 
 /* Replaced content */

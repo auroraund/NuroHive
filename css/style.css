@@ -1,3 +1,31 @@
+:root {
+  color: rgb(20, 20, 20);
+  --hover-linktext-color: rgb(180, 180, 180);
+  --theme-toggle-color: rgb(199, 0, 0);
+  background-color: rgb(255, 255, 255);
+  --header-bg: rgb(255, 255, 255);
+  transition: color 0.45s ease, background-color 0.45s ease;
+}
+
+html.dark {
+  color: #c0c0c0;
+  --hover-linktext-color: rgb(255, 255, 255);
+  --theme-toggle-color: rgb(190, 233, 0);
+  background-color: rgb(20, 20, 20);
+  --header-bg: rgb(20, 20, 20);
+}
+
+#theme-toggle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--theme-toggle-color);
+  border-radius: 50%;
+  transition: background-color 0.45s ease, transform 0.2s ease;
+}
+#theme-toggle:hover {
+  transform: scale(1.2);
+}
+
 html {
   font-size: 14px; /*base-font size for rem*/
 }
@@ -5,20 +33,24 @@ html body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-color: rgb(20, 20, 20);
-  color: rgb(180, 180, 180); /*Site-wide color scheme*/
-}
-html body a:hover {
-  color: white;
 }
 html body a {
+  display: inline-block;
   border-bottom: solid 1px;
+  transform-origin: left;
+  transition: color 0.025s ease, transform 0.025s ease;
+}
+html body a:hover {
+  color: var(--hover-linktext-color);
+  transform: scaleX(1.01);
 }
 html body header {
   height: 100px;
   padding-inline: 60px;
   display: flex;
   justify-content: space-between;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   align-items: center;
   border-bottom: solid 1px;
   font-size: 1.1rem;
@@ -27,19 +59,25 @@ html body header {
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: rgb(20, 20, 20);
-  transition: height 0.6s ease, padding 0.6s ease, font-size 0.6s ease, background-color 0.6s ease, border-color 0.6s ease;
+  transition: height 0.45s ease, padding 0.45s ease, font-size 0.45s ease, background-color 0.45s ease, border-color 0.45s ease;
 }
 html body header .menu-container {
   display: flex;
+  margin-left: auto;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+html body header a {
+  border-bottom: solid 0;
 }
 html body header.is-scrolled {
   height: 50px;
   font-size: 1rem;
-  background-color: rgba(20, 20, 20, 0.5);
+  background-color: var(--header-bg);
   border-color: transparent;
+}
+html body header.is-scrolled a {
+  border-bottom: solid 1px;
 }
 html body main {
   padding: 60px 60px;
@@ -51,7 +89,10 @@ html body main {
   margin-top: 100px; /* Same value as the header's height */
 }
 html body main #article-section {
-  line-height: 2rem;
+  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
 }
 html body main #hero-section img {
   width: 100%;
@@ -75,7 +116,7 @@ html body main h2 {
 }
 html body footer {
   border-top: solid 1px;
-  padding: 30px;
+  padding: 60px;
   display: flex;
   justify-content: space-between;
   text-align: center;
