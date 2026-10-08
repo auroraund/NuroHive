@@ -20,6 +20,10 @@ html.dark {
   --header-bg: rgb(20, 20, 20);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #theme-toggle {
   width: 20px;
   height: 20px;
@@ -112,13 +116,6 @@ html {
       margin: auto;
       margin-top: 100px; /* Same value as the header's height */
 
-      #article-section {
-        line-height: 1.4rem;
-        display: flex;
-        flex-direction: column;
-        row-gap: 4px;
-      }
-
       #hero-section {
         //background-color: rgb(180, 180, 180); /*Site-wide color scheme*/
         img {
@@ -143,6 +140,26 @@ html {
             transparent
           );
         }
+
+        scroll-margin-top: 200px;
+      }
+
+      #works-section {
+        line-height: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+
+        scroll-margin-top: 80px;
+      }
+
+      #articles-section {
+        line-height: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+
+        scroll-margin-top: 80px;
       }
 
       #dummy-section {
