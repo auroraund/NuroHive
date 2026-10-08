@@ -175,33 +175,75 @@ html {
       }
 
       #hero-section {
-        //background-color: rgb(180, 180, 180); /*Site-wide color scheme*/
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 25px;
-
-          /*
-          -webkit-mask-image: linear-gradient(
-            to bottom,
-            transparent,
-            #000 40%,
-            #000 60%,
-            transparent
-          );
-
-          mask-image: linear-gradient(
-            to bottom,
-            transparent,
-            #000 40%,
-            #000 60%,
-            transparent
-          );
-          */
-        }
+        width: 100%;
+        position: relative;
+        overflow: hidden;
 
         scroll-margin-top: 200px;
+
+        .slideshow-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9; // またはお好みの高さ指定（例: height: 80vh;）
+          background-color: #0a0a0a;
+
+          .slideshow-track {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            .slide {
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              visibility: hidden;
+              transition:
+                opacity 0.8s ease,
+                visibility 0.8s ease;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 25px;
+              }
+
+              &.active {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+
+          /* ドットナビゲーション */
+          .slideshow-dots {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 10;
+
+            .dot {
+              width: 0.5rem;
+              height: 0.5rem;
+              border-radius: 50%;
+              background-color: rgba(255, 255, 255, 0.4);
+              border: none;
+              cursor: pointer;
+              padding: 0;
+              transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+
+              &.active {
+                background-color: #ffffff;
+                transform: scale(1.3);
+              }
+            }
+          }
+        }
       }
 
       #works-section {
