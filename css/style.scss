@@ -132,13 +132,57 @@ html {
       margin: auto;
       margin-top: 100px; /* Same value as the header's height */
 
+      .title-call {
+        font-size: 20rem;
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        opacity: 0.2;
+
+        .title-call-track {
+          display: flex;
+          width: max-content; // 中身の文字数に合わせて親幅を自動拡張
+          animation: marquee-title 30s linear infinite;
+
+          span {
+            display: inline-block;
+            flex-shrink: 0;
+            padding-right: 6rem; // 文字同士の間隔
+          }
+        }
+      }
+
+      @keyframes marquee-title {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* 4つ並べたうちの半分（2つ分 = -50%）移動した瞬間に戻すと完全にシームレス */
+          transform: translateX(-50%);
+        }
+      }
+
+      .work-data {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3rem;
+
+        #work-subtitle {
+          font-size: 1.3rem;
+        }
+      }
+
       #hero-section {
         //background-color: rgb(180, 180, 180); /*Site-wide color scheme*/
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 25px;
 
+          /*
           -webkit-mask-image: linear-gradient(
             to bottom,
             transparent,
@@ -147,7 +191,6 @@ html {
             transparent
           );
 
-          /*main*/
           mask-image: linear-gradient(
             to bottom,
             transparent,
@@ -155,6 +198,7 @@ html {
             #000 60%,
             transparent
           );
+          */
         }
 
         scroll-margin-top: 200px;
@@ -187,11 +231,6 @@ html {
         scroll-margin-top: 80px;
       }
 
-      #dummy-section {
-        height: 300px;
-        background-color: rgb(180, 180, 180);
-      }
-
       h2 {
         text-align: center;
         display: block;
@@ -199,6 +238,15 @@ html {
         border-width: 0px 1px;
         margin-bottom: 10px;
       }
+    }
+
+    #bottom-section {
+      line-height: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 60px;
+
+      scroll-margin-top: 80px;
     }
 
     footer {

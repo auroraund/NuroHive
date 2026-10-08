@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   color: rgb(20, 20, 20);
   --hover-linktext-color: rgb(180, 180, 180);
@@ -107,14 +108,66 @@ html body main {
   margin: auto;
   margin-top: 100px; /* Same value as the header's height */
 }
+html body main .title-call {
+  font-size: 20rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  opacity: 0.2;
+}
+html body main .title-call .title-call-track {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee-title 30s linear infinite;
+}
+html body main .title-call .title-call-track span {
+  display: inline-block;
+  flex-shrink: 0;
+  padding-right: 6rem;
+}
+@keyframes marquee-title {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* 4つ並べたうちの半分（2つ分 = -50%）移動した瞬間に戻すと完全にシームレス */
+    transform: translateX(-50%);
+  }
+}
+html body main .work-data {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+html body main .work-data #work-subtitle {
+  font-size: 1.3rem;
+}
 html body main #hero-section img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%, #000 60%, transparent);
-  /*main*/
-  mask-image: linear-gradient(to bottom, transparent, #000 40%, #000 60%, transparent);
+  border-radius: 25px;
+  /*
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 40%,
+    #000 60%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 40%,
+    #000 60%,
+    transparent
+  );
+  */
 }
 html body main #hero-section {
   scroll-margin-top: 200px;
@@ -140,16 +193,19 @@ html body main #article-main-section {
   row-gap: 60px;
   scroll-margin-top: 80px;
 }
-html body main #dummy-section {
-  height: 300px;
-  background-color: rgb(180, 180, 180);
-}
 html body main h2 {
   text-align: center;
   display: block;
   border: solid 1px;
   border-width: 0px 1px;
   margin-bottom: 10px;
+}
+html body #bottom-section {
+  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  scroll-margin-top: 80px;
 }
 html body footer {
   border-top: solid 1px;
