@@ -1,10 +1,22 @@
-const toggle = document.getElementById("theme-toggle");
+// Encapsulate the scope using an IIFE
+(() => {
+  const initThemeToggle = () => {
+    const toggleBtn = document.getElementById("theme-toggle");
+    if (!toggleBtn) return;
 
-// Check OS settings (prefers-color-scheme: dark)
-const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-if (isDark) document.documentElement.classList.add("dark");
+    toggleBtn.addEventListener("click", () => {
+      // 1. Toggle the class and directly capture the result (boolean)
+      const isDark = document.documentElement.classList.toggle("dark");
 
-// Toggle manually when the button is clicked
-toggle?.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-});
+      // 2. Save directly to localStorage using a ternary operator
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  };
+
+  // Execute immediately if the DOM is already loaded; otherwise, wait for the event
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+})();
