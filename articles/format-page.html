@@ -32,14 +32,21 @@
     <title>NuroHive</title>
   </head>
   <body>
+    <div id="page-overlay"></div>
     <header id="header">
       <img id="header-icon" src="/favicon.svg" alt="" />
-      <h1><a href="/index.html">NuroHive</a></h1>
-      <div class="menu-container">
+      <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
+      <div class="menu-container notranslate">
         <a href="/index.html#hero-section">Top</a
         ><a href="/index.html#works-section">Works</a
         ><a href="/index.html#articles-section">Articles</a>
       </div>
+      <div class="lang-switch">
+        <button type="button" id="lang-btn" class="lang-btn">English</button>
+      </div>
+
+      <!-- Google 翻訳本体（CSSで非表示にする） -->
+      <div id="google_translate_element" style="display: none"></div>
       <button id="theme-toggle"></button>
     </header>
     <main>
@@ -95,11 +102,28 @@
       <section id="dummy-section"></section>
     </main>
     <footer>
-      <p>Built by <a href="">Auroraund</a></p>
+      <p class="notranslate">Built by <a href="">Auroraund</a></p>
       <p>© 2026 NuroHive</p>
     </footer>
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/scroll-jump-later.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "ja",
+            includedLanguages: "en,ja", // 英語と日本語のみに制限（不要ならこの行を消すと多言語対応）
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element",
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script src="/js/transration-button.js"></script>
   </body>
 </html>
