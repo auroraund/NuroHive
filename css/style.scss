@@ -186,6 +186,8 @@ html {
           width: 100%;
           aspect-ratio: 16 / 9; // またはお好みの高さ指定（例: height: 80vh;）
           background-color: #0a0a0a;
+          border-radius: 25px;
+          overflow: hidden;
 
           .slideshow-track {
             width: 100%;
@@ -204,8 +206,6 @@ html {
               img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                border-radius: 25px;
               }
 
               &.active {
