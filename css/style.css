@@ -6,6 +6,8 @@
   background-color: rgb(255, 255, 255);
   --header-bg: rgb(255, 255, 255);
   --bg-color: rgb(255, 255, 255);
+  --sub-color: rgb(235, 235, 235);
+  --main-color: rgb(20, 20, 20);
   transition: color 0.45s ease;
 }
 
@@ -16,6 +18,9 @@ html.dark {
   background-color: rgb(20, 20, 20);
   --header-bg: rgb(20, 20, 20);
   --bg-color: rgb(20, 20, 20);
+  --border-color: rgb(255, 255, 255);
+  --sub-color: rgb(20, 20, 20);
+  --main-color: rgb(255, 255, 255);
 }
 
 #page-overlay {
@@ -98,6 +103,13 @@ html body header.is-scrolled {
 }
 html body header.is-scrolled a {
   border-bottom: solid 1px;
+}
+html body h2 {
+  text-align: center;
+  display: block;
+  border: solid 1px;
+  border-width: 0px 1px;
+  margin-bottom: 10px;
 }
 html body main {
   padding: 60px 60px;
@@ -228,13 +240,6 @@ html body main #article-main-section {
   row-gap: 60px;
   scroll-margin-top: 80px;
 }
-html body main h2 {
-  text-align: center;
-  display: block;
-  border: solid 1px;
-  border-width: 0px 1px;
-  margin-bottom: 10px;
-}
 html body #bottom-section {
   line-height: 1.4rem;
   display: flex;
@@ -243,9 +248,62 @@ html body #bottom-section {
   scroll-margin-top: 80px;
 }
 html body footer {
-  border-top: solid 1px;
+  border-top: 1px solid #333;
+}
+html body footer .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 60px;
+}
+html body footer .contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+html body footer .contact-form .form-group label {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+html body footer .contact-form .form-group input,
+html body footer .contact-form .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--main-color);
+  border-radius: 4px;
+  color: #000;
+  font-family: inherit;
+}
+html body footer .contact-form .form-group input:focus,
+html body footer .contact-form .form-group textarea:focus {
+  outline: none;
+}
+html body footer .contact-form button {
+  padding: 12px 24px;
+  margin: 0 auto;
+  background: var(--main-color);
+  color: var(--sub-color);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+html body footer .contact-form button:hover {
+  opacity: 0.5;
+}
+html body footer #footer-inline-copyright {
+  width: 100%;
+  border-top: 1px solid #333;
+}
+html body footer #footer-inline-copyright .copyright-inner {
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 60px;
 }/*# sourceMappingURL=style.css.map */

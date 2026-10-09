@@ -7,6 +7,9 @@
   --header-bg: rgb(255, 255, 255);
   --bg-color: rgb(255, 255, 255);
 
+  --sub-color: rgb(235, 235, 235);
+  --main-color: rgb(20, 20, 20);
+
   // background-color の transition を削除（色変化のアニメーションによる白チラつきを防止）
   transition: color 0.45s ease;
 }
@@ -19,6 +22,10 @@ html.dark {
   background-color: rgb(20, 20, 20);
   --header-bg: rgb(20, 20, 20);
   --bg-color: rgb(20, 20, 20);
+  --border-color: rgb(255, 255, 255);
+
+  --sub-color: rgb(20, 20, 20);
+  --main-color: rgb(255, 255, 255);
 }
 
 // 暗転用オーバーレイ
@@ -121,6 +128,14 @@ html {
           border-bottom: solid 1px; //Add underlines to header links
         }
       }
+    }
+
+    h2 {
+      text-align: center;
+      display: block;
+      border: solid 1px;
+      border-width: 0px 1px;
+      margin-bottom: 10px;
     }
 
     main {
@@ -273,14 +288,6 @@ html {
 
         scroll-margin-top: 80px;
       }
-
-      h2 {
-        text-align: center;
-        display: block;
-        border: solid 1px;
-        border-width: 0px 1px;
-        margin-bottom: 10px;
-      }
     }
 
     #bottom-section {
@@ -293,11 +300,75 @@ html {
     }
 
     footer {
-      border-top: solid 1px;
-      padding: 60px;
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
+      border-top: 1px solid #333;
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          label {
+            font-size: 0.85rem;
+            color: #aaa;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--main-color);
+            border-radius: 4px;
+            color: #000;
+            font-family: inherit;
+
+            &:focus {
+              outline: none;
+              //border-color: #000;
+            }
+          }
+        }
+
+        button {
+          padding: 12px 24px;
+          margin: 0 auto;
+          background: var(--main-color);
+          color: var(--sub-color);
+          border: none;
+          border-radius: 4px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      // 100%幅で画面いっぱいに線を引くエリア
+      #footer-inline-copyright {
+        width: 100%;
+        border-top: 1px solid #333; // これで画面端まで届く
+
+        // 中身テキストの位置をフォーム（max-width: 1200px + padding 60px）と完全に揃える
+        .copyright-inner {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 30px 60px;
+        }
+      }
     }
   }
 }
