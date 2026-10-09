@@ -302,8 +302,23 @@ html body footer #footer-inline-copyright {
 html body footer #footer-inline-copyright .copyright-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px 60px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+html body footer #footer-inline-copyright .copyright-inner a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+html body footer #footer-inline-copyright .copyright-inner a:hover {
+  color: var(--main-color);
+}
+html body footer #footer-inline-copyright .copyright-inner .footer-links {
+  display: flex;
+  gap: 24px;
 }/*# sourceMappingURL=style.css.map */

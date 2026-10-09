@@ -354,19 +354,35 @@ html {
         }
       }
 
-      // 100%幅で画面いっぱいに線を引くエリア
       #footer-inline-copyright {
         width: 100%;
-        border-top: 1px solid #333; // これで画面端まで届く
+        border-top: 1px solid #333;
 
-        // 中身テキストの位置をフォーム（max-width: 1200px + padding 60px）と完全に揃える
         .copyright-inner {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
           padding: 30px 60px;
+          font-size: 0.85rem;
+          color: #aaa;
+
+          a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: var(--main-color);
+            }
+          }
+
+          .footer-links {
+            display: flex;
+            gap: 24px;
+          }
         }
       }
     }
