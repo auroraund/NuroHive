@@ -193,9 +193,6 @@ html body main #hero-section .slideshow-container .slideshow-track .slide.active
   opacity: 1;
   visibility: visible;
 }
-html body main #hero-section .slideshow-container {
-  /* ドットナビゲーション */
-}
 html body main #hero-section .slideshow-container .slideshow-dots {
   position: absolute;
   bottom: 1.5rem;
