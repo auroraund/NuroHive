@@ -136,6 +136,23 @@ html {
       border: solid 1px;
       border-width: 0px 1px;
       margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .work-data {
+      text-align: center;
+
+      #work-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      #work-subtitle {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
     }
 
     main {
@@ -176,16 +193,6 @@ html {
         100% {
           /* 4つ並べたうちの半分（2つ分 = -50%）移動した瞬間に戻すと完全にシームレス */
           transform: translateX(-50%);
-        }
-      }
-
-      .work-data {
-        text-align: center;
-        font-size: 2rem;
-        line-height: 3rem;
-
-        #work-subtitle {
-          font-size: 1.3rem;
         }
       }
 
