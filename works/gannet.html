@@ -1,16 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <script>
-      // Apply theme state immediately (guaranteed to run before CSS loads)
+      // テーマ状態の初期適用
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") {
         document.documentElement.classList.add("dark");
       } else if (savedTheme === "light") {
         document.documentElement.classList.remove("dark");
       } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        // Follow OS setting if not set in localStorage
         document.documentElement.classList.add("dark");
+      }
+
+      // 初回訪問時（未設定時）または user_lang が 'en' の場合は英語版詳細へリダイレクト
+      const savedLang = localStorage.getItem("user_lang");
+      if (!savedLang) {
+        localStorage.setItem("user_lang", "en");
+        window.location.replace("/works/gannet-en.html");
+      } else if (savedLang === "en") {
+        window.location.replace("/works/gannet-en.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -36,25 +44,30 @@
     <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
-        <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
+        <h1><a href="/index.html">NuroHive</a></h1>
       </div>
 
       <div id="menu-flex-container">
         <div class="lang-switch">
-          <!-- 言語切り替えトグルボタン -->
-          <a id="lang-toggle" type="button">EN</a>
+          <!-- 英語版詳細へ切り替えるリンク -->
+          <a
+            id="lang-toggle"
+            href="/works/gannet-en.html"
+            onclick="localStorage.setItem('user_lang', 'en')"
+            >EN</a
+          >
         </div>
         <!-- 800px以下で表示されるハンバーガーボタン -->
         <button
           id="hamburger-toggle"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label="ナビゲーションの開閉"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div class="menu-container notranslate">
+        <div class="menu-container">
           <a href="/index.html#hero-section">Top</a>
           <a href="/index.html#works-section">Works</a>
           <a href="/index.html#articles-section">Articles</a>
@@ -81,12 +94,12 @@
             <button
               type="button"
               class="dot active"
-              aria-label="Go to slide 1"
+              aria-label="スライド1を表示"
             ></button>
             <button
               type="button"
               class="dot"
-              aria-label="Go to slide 2"
+              aria-label="スライド2を表示"
             ></button>
           </div>
         </div>
@@ -96,10 +109,9 @@
         <p id="work-subtitle">Icing WatterBottle / 2017</p>
       </div>
       <section id="article-main-section">
-        <h2 id="intro" data-i18n="gannet.title">Sports water bottle: Gannet</h2>
-        <p data-i18n="gannet.intro">
-          Gannet is a specialized sports water bottle designed to support
-          athletic recovery and hydration in one package.
+        <h2 id="intro">スポーツウォーターボトル：Gannet</h2>
+        <p>
+          Gannetは、アスリートのリカバリーと水分補給をひとつのパッケージでサポートするために設計された、専用のスポーツウォーターボトルです。
         </p>
 
         <img
@@ -108,18 +120,12 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="key-features" data-i18n="gannet.featuresTitle">
-          Key features and benefits
-        </h2>
+        <h2 id="key-features">主な特徴とメリット</h2>
         <p>
-          <span data-i18n="gannet.feature1"
-            >Detachable icing sheet — Comes with a removable cooling sheet built
-            directly into the bottle.</span
-          ><br />
-          <span data-i18n="gannet.feature2"
-            >Post-workout support — Wrap the sheet around arms or legs after
-            exercise to soothe and recover fatigued muscles.</span
-          >
+          取り外し可能なアイシングシート —
+          ボトル本体に直接組み込まれた、着脱可能な冷却シートが付属しています。<br />
+          運動後のサポート —
+          運動後にシートを腕や足に巻きつけることで、疲労した筋肉をケアして回復を促します。
         </p>
       </section>
       <p class="title-call">
@@ -161,7 +167,7 @@
       <div id="footer-inline-copyright">
         <div class="copyright-inner">
           <!-- 制作者（個人）のクレジット -->
-          <p class="notranslate">Built by Auroraund</p>
+          <p>Built by Auroraund</p>
 
           <!-- 公式アカウント（NuroHive）と開発者リンク -->
           <div class="footer-links">
@@ -183,9 +189,6 @@
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/slideshow.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-    <script src="/js/language.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
   </body>

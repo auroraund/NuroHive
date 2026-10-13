@@ -1,16 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <script>
-      // Apply theme state immediately (guaranteed to run before CSS loads)
+      // テーマ状態の初期適用
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") {
         document.documentElement.classList.add("dark");
       } else if (savedTheme === "light") {
         document.documentElement.classList.remove("dark");
       } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        // Follow OS setting if not set in localStorage
         document.documentElement.classList.add("dark");
+      }
+
+      // 初回訪問時（未設定時）または user_lang が 'en' の場合は英語版記事へリダイレクト
+      const savedLang = localStorage.getItem("user_lang");
+      if (!savedLang) {
+        localStorage.setItem("user_lang", "en");
+        window.location.replace("/articles/Prefix-rule-article-en.html");
+      } else if (savedLang === "en") {
+        window.location.replace("/articles/Prefix-rule-article-en.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -36,25 +44,30 @@
     <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
-        <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
+        <h1><a href="/index.html">NuroHive</a></h1>
       </div>
 
       <div id="menu-flex-container">
         <div class="lang-switch">
-          <!-- 言語切り替えトグルボタン -->
-          <a id="lang-toggle" type="button">EN</a>
+          <!-- 英語版記事へ切り替えるリンク -->
+          <a
+            id="lang-toggle"
+            href="/articles/Prefix-rule-article-en.html"
+            onclick="localStorage.setItem('user_lang', 'en')"
+            >EN</a
+          >
         </div>
         <!-- 800px以下で表示されるハンバーガーボタン -->
         <button
           id="hamburger-toggle"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label="ナビゲーションの開閉"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div class="menu-container notranslate">
+        <div class="menu-container">
           <a href="/index.html#hero-section">Top</a>
           <a href="/index.html#works-section">Works</a>
           <a href="/index.html#articles-section">Articles</a>
@@ -65,16 +78,13 @@
     <button id="theme-toggle"></button>
     <main>
       <div class="article-data">
-        <p id="article-title" data-i18n="articles.prefixRule">
-          Prefix rule article
-        </p>
+        <p id="article-title">NuroHiveのGit Issue接頭辞ルール</p>
         <p id="article-subtitle">Git / 2026</p>
       </div>
       <article id="article-main-section">
-        <h2 id="intro" data-i18n="git.title">Git commit prefix cheat sheet</h2>
-        <p data-i18n="git.intro">
-          Follow these standardized prefixes to keep your git history clean,
-          readable, and structured.
+        <h2 id="intro">Gitコミット接頭辞チートシート</h2>
+        <p>
+          Gitの履歴をクリーンかつ読みやすく、構造的に保つために以下の標準化された接頭辞を使用してください。
         </p>
 
         <img
@@ -83,27 +93,13 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="development" data-i18n="git.devTitle">
-          Features and bug fixes
-        </h2>
+        <h2 id="development">機能追加とバグ修正</h2>
         <p>
-          <code data-i18n="git.prefixes.feat">feat:</code>
-          <span data-i18n="git.desc.feat"
-            >— Adding a new feature or functionality.</span
-          ><br />
-          <code data-i18n="git.prefixes.fix">fix:</code>
-          <span data-i18n="git.desc.fix"
-            >— Resolving a bug or unexpected behavior.</span
-          ><br />
-          <code data-i18n="git.prefixes.refactor">refactor:</code>
-          <span data-i18n="git.desc.refactor"
-            >— Rewriting code to improve structure without changing
-            behavior.</span
-          ><br />
-          <code data-i18n="git.prefixes.perf">perf:</code>
-          <span data-i18n="git.desc.perf"
-            >— Improving performance, memory, or execution speed.</span
-          >
+          <code>feat:</code> — 新しい機能や機能追加。<br />
+          <code>fix:</code> — バグや予期せぬ挙動の修正。<br />
+          <code>refactor:</code> —
+          挙動を変えずにコード構造を改善するリファクタリング。<br />
+          <code>perf:</code> — パフォーマンス、メモリ、実行速度の向上。
         </p>
 
         <img
@@ -112,22 +108,12 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="maintenance" data-i18n="git.maintTitle">
-          Documentation and chores
-        </h2>
+        <h2 id="maintenance">ドキュメントとメンテナンス</h2>
         <p>
-          <code data-i18n="git.prefixes.docs">docs:</code>
-          <span data-i18n="git.desc.docs"
-            >— Updating documentation, READMEs, or article titles.</span
-          ><br />
-          <code data-i18n="git.prefixes.style">style:</code>
-          <span data-i18n="git.desc.style"
-            >— Adjusting formatting, fixing typos, or tweaking UI spacing.</span
-          ><br />
-          <code data-i18n="git.prefixes.chore">chore:</code>
-          <span data-i18n="git.desc.chore"
-            >— Updating dependencies, build tools, or config files.</span
-          >
+          <code>docs:</code> — ドキュメント、README、記事タイトルの更新。<br />
+          <code>style:</code> —
+          フォーマット調整、タイポ修正、UI余白の微調整。<br />
+          <code>chore:</code> — 依存関係、ビルドツール、設定ファイルの更新。
         </p>
       </article>
       <section id="bottom-section"></section>
@@ -139,7 +125,7 @@
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
-        <h2 class="notranslate">Contact</h2>
+        <h2>Contact</h2>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -161,10 +147,8 @@
       <!-- 外枠：画面横幅100%で上ボーダーを引く -->
       <div id="footer-inline-copyright">
         <div class="copyright-inner">
-          <!-- 制作者（個人）のクレジット -->
-          <p class="notranslate">Built by Auroraund</p>
+          <p>Built by Auroraund</p>
 
-          <!-- 公式アカウント（NuroHive）と開発者リンク -->
           <div class="footer-links">
             <a href="https://x.com/nurohive" target="_blank" rel="noopener"
               >X (@NuroHive)</a
@@ -184,9 +168,6 @@
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/slideshow.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-    <script src="/js/language.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
   </body>
