@@ -32,7 +32,7 @@
     <title>NuroHive</title>
   </head>
   <body>
-    <div id="page-overlay"></div>
+    <div id="page-loader"></div>
     <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
@@ -41,7 +41,8 @@
       <div class="menu-container notranslate">
         <a href="/index.html#hero-section">Top</a
         ><a href="/index.html#works-section">Works</a
-        ><a href="/index.html#articles-section">Articles</a>
+        ><a href="/index.html#articles-section">Articles</a
+        ><a href="#contact-section">Contact</a>
         <div class="lang-switch">
           <!-- 言語切り替えトグルボタン -->
           <button id="lang-toggle" type="button">EN</button>
@@ -101,38 +102,6 @@
             >Prefix rule article</a
           >
         </p>
-        <!--
-  <p>
-    <a href="" data-i18n="articles.minimalistWebDesign">Minimalist Web Design: Achieving Performance and Maintainability with Astro and SCSS</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.chasing100">Chasing 100: A Guide to Optimizing Web Performance</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.componentBasedScss">Component-Based SCSS: Strategies for Maintainable Stylesheets</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.logicOfSpace">The Logic of Space: How Typography and Margins Define UI</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.refactoringAsAHabit">Refactoring as a Habit: Lessons from a Year of Personal Site Updates</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.inclusiveDesign">Inclusive Design on the Web: Implementing Accessible Dark Mode and Color Systems</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.applyingProductDesign">Applying Product Design Frameworks to Web Development</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.lightweightInteractions">Crafting Lightweight Web Interactions with Vanilla JavaScript</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.fromPrintToPixel">From Print to Pixel: Transferring Data Integrity Principles</a>
-  </p>
-  <p>
-    <a href="" data-i18n="articles.beyondThePortfolio">Beyond the Portfolio: NuroHive as a Living Digital Product</a>
-  </p>
-  -->
       </section>
       <p class="title-call">
         <span class="title-call-track">
@@ -146,6 +115,7 @@
     <footer>
       <form
         class="contact-form"
+        id="contact-section"
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
@@ -193,10 +163,10 @@
     </footer>
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
-    <script src="/js/scroll-jump-later.js"></script>
     <script src="/js/slideshow.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
     <script src="/js/language.js"></script>
+    <script src="/js/loading.js"></script>
   </body>
 </html>
