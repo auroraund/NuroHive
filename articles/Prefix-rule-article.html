@@ -32,7 +32,7 @@
     <title>NuroHive</title>
   </head>
   <body>
-    <div id="page-overlay"></div>
+    <div id="page-loader"></div>
     <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
@@ -41,7 +41,8 @@
       <div class="menu-container notranslate">
         <a href="/index.html#hero-section">Top</a
         ><a href="/index.html#works-section">Works</a
-        ><a href="/index.html#articles-section">Articles</a>
+        ><a href="/index.html#articles-section">Articles</a
+        ><a href="#contact-section">Contact</a>
         <div class="lang-switch">
           <!-- 言語切り替えトグルボタン -->
           <button id="lang-toggle" type="button">EN</button>
@@ -115,6 +116,7 @@
     <footer>
       <form
         class="contact-form"
+        id="contact-section"
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
@@ -162,9 +164,10 @@
     </footer>
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
-    <script src="/js/scroll-jump-later.js"></script>
+    <script src="/js/slideshow.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
     <script src="/js/language.js"></script>
+    <script src="/js/loading.js"></script>
   </body>
 </html>
