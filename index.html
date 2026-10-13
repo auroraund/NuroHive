@@ -1,16 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <script>
-      // Apply theme state immediately (guaranteed to run before CSS loads)
+      // テーマ適用
       const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") {
+      if (
+        savedTheme === "dark" ||
+        (!savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
         document.documentElement.classList.add("dark");
-      } else if (savedTheme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        // Follow OS setting if not set in localStorage
-        document.documentElement.classList.add("dark");
+      }
+
+      // 言語リダイレクト処理（初回は英語版を表示）
+      const savedLang = localStorage.getItem("user_lang");
+      if (!savedLang) {
+        localStorage.setItem("user_lang", "en");
+        window.location.replace("/index-en.html");
+      } else if (savedLang === "en") {
+        window.location.replace("/index-en.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -36,28 +44,32 @@
     <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
-        <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
+        <h1><a href="/index.html">NuroHive</a></h1>
       </div>
 
       <div id="menu-flex-container">
         <div class="lang-switch">
-          <!-- 言語切り替えトグルボタン -->
-          <a id="lang-toggle" type="button">EN</a>
+          <a
+            id="lang-toggle"
+            href="/index-en.html"
+            onclick="localStorage.setItem('user_lang', 'en')"
+            >EN</a
+          >
         </div>
         <!-- 800px以下で表示されるハンバーガーボタン -->
         <button
           id="hamburger-toggle"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label="ナビゲーションの開閉"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div class="menu-container notranslate">
-          <a href="/index.html#hero-section">Top</a>
-          <a href="/index.html#works-section">Works</a>
-          <a href="/index.html#articles-section">Articles</a>
+        <div class="menu-container">
+          <a href="#hero-section">Top</a>
+          <a href="#works-section">Works</a>
+          <a href="#articles-section">Articles</a>
           <a href="#contact-section">Contact</a>
         </div>
       </div>
@@ -81,18 +93,18 @@
             <button
               type="button"
               class="dot active"
-              aria-label="Go to slide 1"
+              aria-label="スライド1を表示"
             ></button>
             <button
               type="button"
               class="dot"
-              aria-label="Go to slide 2"
+              aria-label="スライド2を表示"
             ></button>
           </div>
         </div>
       </section>
       <section class="index-text-link" id="works-section">
-        <h2 class="notranslate">Works</h2>
+        <h2>Works</h2>
         <p>
           <a href="/works/gannet.html">Gannet / Icing WatterBottle / 2017</a>
         </p>
@@ -105,10 +117,10 @@
       />
 
       <section class="index-text-link" id="articles-section">
-        <h2 class="notranslate">Articles</h2>
+        <h2>Articles</h2>
         <p>
           <a href="/articles/Prefix-rule-article.html">
-            <span data-i18n="articles.prefixRule">Git issue prefix rules for NuroHive</span>
+            NuroHiveのGit Issue接頭辞ルール
             <span class="article-meta">/ Git / 2026</span>
           </a>
         </p>
@@ -130,18 +142,22 @@
         method="POST"
       >
         <h2 class="notranslate">Contact</h2>
+
         <div class="form-group">
           <label for="name">Name</label>
+
           <input type="text" id="name" name="name" required />
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
+
           <input type="email" id="email" name="email" required />
         </div>
 
         <div class="form-group">
           <label for="message">Message</label>
+
           <textarea id="message" name="message" rows="4" required></textarea>
         </div>
 
@@ -152,7 +168,7 @@
       <div id="footer-inline-copyright">
         <div class="copyright-inner">
           <!-- 制作者（個人）のクレジット -->
-          <p class="notranslate">Built by Auroraund</p>
+          <p>Built by Auroraund</p>
 
           <!-- 公式アカウント（NuroHive）と開発者リンク -->
           <div class="footer-links">
@@ -174,9 +190,6 @@
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/slideshow.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-    <script src="/js/language.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
   </body>
