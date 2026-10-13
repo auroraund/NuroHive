@@ -6,7 +6,6 @@
   --main-on-color: #aaa;
   --main-off-color: rgb(20, 20, 20);
 
-  // background-color の transition を削除（色変化のアニメーションによる白チラつきを防止）
   transition: color 0.45s ease;
 
   --padding-inline: 30px;
@@ -29,14 +28,13 @@ html.dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000; /* ダークモードなら #000 や親背景色に合わせる */
+  background-color: #000000;
   z-index: 9999;
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.5s ease-out; /* x秒でふわっと消える */
+  transition: opacity 0.5s ease-out;
 }
 
-/* 読み込み完了後に付与するクラス */
 body.loaded #page-loader {
   opacity: 0;
 }
@@ -75,7 +73,7 @@ a {
 }
 
 html {
-  font-size: 13px; /*base-font size for rem*/
+  font-size: 13px;
 
   body {
     font-family: "Inter", sans-serif;
@@ -84,8 +82,8 @@ html {
     background-color: var(--bg-color);
 
     a {
-      display: inline-block; // Prerequisites for the transform to work correctly
-      transform-origin: left; //Criteria for Growth
+      display: inline-block;
+      transform-origin: left;
 
       transition:
         color 0.025s ease,
@@ -93,7 +91,6 @@ html {
 
       &:hover {
         color: var(--main-on-color);
-        //transform: scaleX(1.01);
       }
     }
 
@@ -157,7 +154,7 @@ html {
       &.is-scrolled {
         height: 50px;
         background-color: color-mix(in srgb, var(--bg-color) 30%, transparent);
-        backdrop-filter: blur(2px); /* 背後をぼかす */
+        backdrop-filter: blur(2px);
       }
     }
 
@@ -174,17 +171,16 @@ html {
     main {
       display: flex;
       flex-direction: column;
-      row-gap: 60px;
+      row-gap: 60px; /* 全要素間の縦ギャップを60pxで一元管理 */
       max-width: var(--contents-max-width);
       margin: auto;
-      margin-top: 100px; /* Same value as the header's height */
+      margin-top: 100px;
 
       @keyframes marquee-title {
         0% {
           transform: translateX(0);
         }
         100% {
-          /* 4つ並べたうちの半分（2つ分 = -50%）移動した瞬間に戻すと完全にシームレス */
           transform: translateX(-50%);
         }
       }
@@ -193,13 +189,12 @@ html {
         width: 100%;
         position: relative;
         overflow: hidden;
-
         scroll-margin-top: 200px;
 
         .slideshow-container {
           position: relative;
           width: 100%;
-          aspect-ratio: 16 / 9; // またはお好みの高さ指定（例: height: 80vh;）
+          aspect-ratio: 16 / 9;
           background-color: #0a0a0a;
           overflow: hidden;
 
@@ -281,32 +276,56 @@ html {
         }
       }
 
+      /* 記事ページ等：スライドショー（#hero-section）が無い場合の上部余白補正 */
       .article-data {
-        margin-top: 60px; /* main-flex-gap */
+        margin-top: 60px;
       }
 
       /* ==========================================================================
-   Sections & Article Layout
+   Sections & Article Content Layout
    ========================================================================== */
+      #works-and-articles-section,
       #works-section,
       #articles-section,
-      #article-main-section {
+      #article-main-section,
+      .content-section {
         display: flex;
         flex-direction: column;
         row-gap: 30px;
         line-height: 1.4rem;
         scroll-margin-top: 80px;
         padding-inline: var(--padding-inline);
-      }
+        /* ※ margin-bottom: 60px は削除 (main の row-gap に一任する) */
 
-      .index-text-link {
-        a {
-          font-size: 1.3rem;
-          font-weight: 600;
-          border-bottom: solid 1px;
+        /* h2 の余計な margin-bottom を打ち消して row-gap に統一 */
+        h2 {
+          margin-bottom: 0;
+        }
+
+        /* 本文テキストおよびリンクのスタイル統一 */
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+
+          a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
         }
       }
 
+      /* 記事・作品コンテンツの終了地点（フッター手前）に下部余白を確保 */
+      #article-main-section {
+        margin-bottom: 60px;
+      }
+
+      /* ==========================================================================
+   Marquee Title (.title-call)
+   ========================================================================== */
       .title-call {
         font-size: 20rem;
         font-weight: 600;
@@ -314,7 +333,7 @@ html {
         overflow: hidden;
         width: 100%;
         line-height: 15rem;
-        margin-bottom: 60px;
+        margin-bottom: 60px; /* フッター手前の余白を確保 */
 
         .title-call-track {
           display: flex;
@@ -340,7 +359,12 @@ html {
         width: 100%;
         max-width: var(--contents-max-width);
         margin: 0 auto;
-        padding: var(--padding-inline);
+        padding: 60px var(--padding-inline); /* 上下の余白を60pxに統一 */
+
+        /* 内部見出しの margin-bottom を打ち消して gap 制御に統一 */
+        h2 {
+          margin-bottom: 0;
+        }
 
         .form-group {
           display: flex;
@@ -399,7 +423,6 @@ html {
           padding: var(--padding-inline);
           font-size: 0.85rem;
 
-          //レスポンシブ
           @media (max-width: 800px) {
             flex-direction: column;
             gap: 10px;
@@ -427,13 +450,12 @@ html {
 
 /* 画面幅 800px 以下の設定 */
 @media screen and (max-width: 800px) {
-  /* ハンバーガーボタンを表示（サイズを小型化） */
   #hamburger-toggle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 22px; /* 30px から 22px に小型化 */
-    height: 16px; /* 22px から 16px に小型化 */
+    width: 22px;
+    height: 16px;
     background: none;
     border: none;
     cursor: pointer;
@@ -443,19 +465,17 @@ html {
     margin-left: 10px;
   }
 
-  /* 線の設定（太さを 3px に変更） */
   #hamburger-toggle span {
     display: block;
     width: 100%;
-    height: 2px; /* 2px から 3px に太く変更 */
+    height: 2px;
     background-color: currentColor;
-    border-radius: 1px; /* 線の角を少し丸めて綺麗に見せる */
+    border-radius: 1px;
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
   }
 
-  /* 800px以下では menu-container を初期状態で完全に非表示にする */
   header .menu-container {
     display: none !important;
     position: fixed;
@@ -472,12 +492,10 @@ html {
     z-index: 1000;
   }
 
-  /* メニューが開いた時 */
   header .menu-container.is-active {
     display: flex !important;
   }
 
-  /* ハンバーガーボタンの変形（サイズ変更に合わせて移動距離を調整） */
   #hamburger-toggle.is-active span:nth-child(1) {
     transform: translateY(7.5px) rotate(45deg);
   }

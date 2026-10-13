@@ -25,14 +25,13 @@ html.dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000; /* ダークモードなら #000 や親背景色に合わせる */
+  background-color: #000000;
   z-index: 9999;
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.5s ease-out; /* x秒でふわっと消える */
+  transition: opacity 0.5s ease-out;
 }
 
-/* 読み込み完了後に付与するクラス */
 body.loaded #page-loader {
   opacity: 0;
 }
@@ -66,7 +65,7 @@ a {
 }
 
 html {
-  font-size: 13px; /*base-font size for rem*/
+  font-size: 13px;
 }
 html body {
   font-family: "Inter", sans-serif;
@@ -130,7 +129,7 @@ html body header #menu-flex-container .menu-container {
 html body header.is-scrolled {
   height: 50px;
   background-color: color-mix(in srgb, var(--bg-color) 30%, transparent);
-  backdrop-filter: blur(2px); /* 背後をぼかす */
+  backdrop-filter: blur(2px);
 }
 html body h2 {
   text-align: center;
@@ -144,17 +143,16 @@ html body h2 {
 html body main {
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  row-gap: 60px; /* 全要素間の縦ギャップを60pxで一元管理 */
   max-width: var(--contents-max-width);
   margin: auto;
-  margin-top: 100px; /* Same value as the header's height */
+  margin-top: 100px;
 }
 @keyframes marquee-title {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* 4つ並べたうちの半分（2つ分 = -50%）移動した瞬間に戻すと完全にシームレス */
     transform: translateX(-50%);
   }
 }
@@ -238,28 +236,78 @@ html body main .article-data [id$=-subtitle] {
   font-size: 1.2rem;
   font-weight: 500;
 }
+html body main {
+  /* 記事ページ等：スライドショー（#hero-section）が無い場合の上部余白補正 */
+}
 html body main .article-data {
-  margin-top: 60px; /* main-flex-gap */
+  margin-top: 60px;
 }
 html body main {
   /* ==========================================================================
-  Sections & Article Layout
+  Sections & Article Content Layout
   ========================================================================== */
 }
+html body main #works-and-articles-section,
 html body main #works-section,
 html body main #articles-section,
-html body main #article-main-section {
+html body main #article-main-section,
+html body main .content-section {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
   line-height: 1.4rem;
   scroll-margin-top: 80px;
   padding-inline: var(--padding-inline);
+  /* ※ margin-bottom: 60px は削除 (main の row-gap に一任する) */
+  /* h2 の余計な margin-bottom を打ち消して row-gap に統一 */
 }
-html body main .index-text-link a {
-  font-size: 1.3rem;
-  font-weight: 600;
-  border-bottom: solid 1px;
+html body main #works-and-articles-section h2,
+html body main #works-section h2,
+html body main #articles-section h2,
+html body main #article-main-section h2,
+html body main .content-section h2 {
+  margin-bottom: 0;
+}
+html body main #works-and-articles-section,
+html body main #works-section,
+html body main #articles-section,
+html body main #article-main-section,
+html body main .content-section {
+  /* 本文テキストおよびリンクのスタイル統一 */
+}
+html body main #works-and-articles-section p,
+html body main #works-section p,
+html body main #articles-section p,
+html body main #article-main-section p,
+html body main .content-section p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+html body main #works-and-articles-section p a,
+html body main #works-section p a,
+html body main #articles-section p a,
+html body main #article-main-section p a,
+html body main .content-section p a {
+  color: inherit;
+  text-decoration: underline;
+}
+html body main #works-and-articles-section p a:hover,
+html body main #works-section p a:hover,
+html body main #articles-section p a:hover,
+html body main #article-main-section p a:hover,
+html body main .content-section p a:hover {
+  opacity: 0.7;
+}
+html body main {
+  /* 記事・作品コンテンツの終了地点（フッター手前）に下部余白を確保 */
+}
+html body main #article-main-section {
+  margin-bottom: 60px;
+}
+html body main {
+  /* ==========================================================================
+  Marquee Title (.title-call)
+  ========================================================================== */
 }
 html body main .title-call {
   font-size: 20rem;
@@ -268,7 +316,7 @@ html body main .title-call {
   overflow: hidden;
   width: 100%;
   line-height: 15rem;
-  margin-bottom: 60px;
+  margin-bottom: 60px; /* フッター手前の余白を確保 */
 }
 html body main .title-call .title-call-track {
   display: flex;
@@ -291,7 +339,11 @@ html body footer .contact-form {
   width: 100%;
   max-width: var(--contents-max-width);
   margin: 0 auto;
-  padding: var(--padding-inline);
+  padding: 60px var(--padding-inline); /* 上下の余白を60pxに統一 */
+  /* 内部見出しの margin-bottom を打ち消して gap 制御に統一 */
+}
+html body footer .contact-form h2 {
+  margin-bottom: 0;
 }
 html body footer .contact-form .form-group {
   display: flex;
@@ -365,13 +417,12 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
 
 /* 画面幅 800px 以下の設定 */
 @media screen and (max-width: 800px) {
-  /* ハンバーガーボタンを表示（サイズを小型化） */
   #hamburger-toggle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 22px; /* 30px から 22px に小型化 */
-    height: 16px; /* 22px から 16px に小型化 */
+    width: 22px;
+    height: 16px;
     background: none;
     border: none;
     cursor: pointer;
@@ -380,16 +431,14 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
     color: inherit;
     margin-left: 10px;
   }
-  /* 線の設定（太さを 3px に変更） */
   #hamburger-toggle span {
     display: block;
     width: 100%;
-    height: 2px; /* 2px から 3px に太く変更 */
+    height: 2px;
     background-color: currentColor;
-    border-radius: 1px; /* 線の角を少し丸めて綺麗に見せる */
+    border-radius: 1px;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
-  /* 800px以下では menu-container を初期状態で完全に非表示にする */
   header .menu-container {
     display: none !important;
     position: fixed;
@@ -405,11 +454,9 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
     gap: 32px;
     z-index: 1000;
   }
-  /* メニューが開いた時 */
   header .menu-container.is-active {
     display: flex !important;
   }
-  /* ハンバーガーボタンの変形（サイズ変更に合わせて移動距離を調整） */
   #hamburger-toggle.is-active span:nth-child(1) {
     transform: translateY(7.5px) rotate(45deg);
   }
