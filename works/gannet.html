@@ -40,6 +40,10 @@
         <a href="/index.html#hero-section">Top</a
         ><a href="/index.html#works-section">Works</a
         ><a href="/index.html#articles-section">Articles</a>
+        <div class="lang-switch">
+          <!-- 言語切り替えトグルボタン -->
+          <button id="lang-toggle" type="button">EN</button>
+        </div>
       </div>
       <button id="theme-toggle"></button>
     </header>
@@ -76,20 +80,26 @@
         <p id="work-subtitle">Icing WatterBottle / 2017</p>
       </div>
       <section id="article-main-section">
-        <h2 id="intro">Sports water bottle: Gannet</h2>
-        <p>
+        <h2 id="intro" data-i18n="gannet.title">Sports water bottle: Gannet</h2>
+        <p data-i18n="gannet.intro">
           Gannet is a specialized sports water bottle designed to support
           athletic recovery and hydration in one package.
         </p>
 
         <img src="/favicon.svg" alt="" style="width: 20px; margin: auto" />
 
-        <h2 id="key-features">Key features and benefits</h2>
+        <h2 id="key-features" data-i18n="gannet.featuresTitle">
+          Key features and benefits
+        </h2>
         <p>
-          Detachable icing sheet — Comes with a removable cooling sheet built
-          directly into the bottle.<br />
-          Post-workout support — Wrap the sheet around arms or legs after
-          exercise to soothe and recover fatigued muscles.
+          <span data-i18n="gannet.feature1"
+            >Detachable icing sheet — Comes with a removable cooling sheet built
+            directly into the bottle.</span
+          ><br />
+          <span data-i18n="gannet.feature2"
+            >Post-workout support — Wrap the sheet around arms or legs after
+            exercise to soothe and recover fatigued muscles.</span
+          >
         </p>
       </section>
       <p class="title-call">
@@ -107,7 +117,7 @@
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
-        <h2 class="notranslate">Articles</h2>
+        <h2 class="notranslate">Contact</h2>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -153,5 +163,8 @@
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/scroll-jump-later.js"></script>
     <script src="/js/slideshow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
+    <script src="/js/language.js"></script>
   </body>
 </html>

@@ -1,0 +1,49 @@
+{
+  "git": {
+    "title": "Git commit prefix cheat sheet",
+    "intro": "Follow these standardized prefixes to keep your git history clean, readable, and structured.",
+    "devTitle": "Features and bug fixes",
+    "maintTitle": "Documentation and chores",
+    "prefixes": {
+      "feat": "feat:",
+      "fix": "fix:",
+      "refactor": "refactor:",
+      "perf": "perf:",
+      "docs": "docs:",
+      "style": "style:",
+      "chore": "chore:"
+    },
+    "desc": {
+      "feat": "— Adding a new feature or functionality.",
+      "fix": "— Resolving a bug or unexpected behavior.",
+      "refactor": "— Rewriting code to improve structure without changing behavior.",
+      "perf": "— Improving performance, memory, or execution speed.",
+      "docs": "— Updating documentation, READMEs, or article titles.",
+      "style": "— Adjusting formatting, fixing typos, or tweaking UI spacing.",
+      "chore": "— Updating dependencies, build tools, or config files."
+    }
+  },
+  "works": {
+    "gannet": "Gannet / Icing WatterBottle / 2017"
+  },
+  "articles": {
+    "prefixRule": "Prefix rule article",
+    "minimalistWebDesign": "Minimalist Web Design: Achieving Performance and Maintainability with Astro and SCSS",
+    "chasing100": "Chasing 100: A Guide to Optimizing Web Performance",
+    "componentBasedScss": "Component-Based SCSS: Strategies for Maintainable Stylesheets",
+    "logicOfSpace": "The Logic of Space: How Typography and Margins Define UI",
+    "refactoringAsAHabit": "Refactoring as a Habit: Lessons from a Year of Personal Site Updates",
+    "inclusiveDesign": "Inclusive Design on the Web: Implementing Accessible Dark Mode and Color Systems",
+    "applyingProductDesign": "Applying Product Design Frameworks to Web Development",
+    "lightweightInteractions": "Crafting Lightweight Web Interactions with Vanilla JavaScript",
+    "fromPrintToPixel": "From Print to Pixel: Transferring Data Integrity Principles",
+    "beyondThePortfolio": "Beyond the Portfolio: NuroHive as a Living Digital Product"
+  },
+  "gannet": {
+    "title": "Sports water bottle: Gannet",
+    "intro": "Gannet is a specialized sports water bottle designed to support athletic recovery and hydration in one package.",
+    "featuresTitle": "Key features and benefits",
+    "feature1": "Detachable icing sheet — Comes with a removable cooling sheet built directly into the bottle.",
+    "feature2": "Post-workout support — Wrap the sheet around arms or legs after exercise to soothe and recover fatigued muscles."
+  }
+}

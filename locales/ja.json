@@ -1,0 +1,49 @@
+{
+  "git": {
+    "title": "Git コミット接頭辞チートシート",
+    "intro": "標準化された接頭辞を使用して、Gitの履歴をクリーンで読みやすく、構造化された状態に保ちます。",
+    "devTitle": "機能追加とバグ修正",
+    "maintTitle": "ドキュメントと雑務",
+    "prefixes": {
+      "feat": "feat:",
+      "fix": "fix:",
+      "refactor": "refactor:",
+      "perf": "perf:",
+      "docs": "docs:",
+      "style": "style:",
+      "chore": "chore:"
+    },
+    "desc": {
+      "feat": "— 新機能や機能の追加。",
+      "fix": "— バグや予期しない挙動の修正。",
+      "refactor": "— 挙動を変えずに構造を改善するためのコードの書き換え。",
+      "perf": "— パフォーマンス、メモリ消費、または実行速度の向上。",
+      "docs": "— ドキュメント、README、または記事タイトルの更新。",
+      "style": "— フォーマット調整、タイポ修正、UI余白の調整。",
+      "chore": "— 依存関係、ビルドツール、設定ファイルの更新。"
+    }
+  },
+  "works": {
+    "gannet": "Gannet / アイシングウォーターボトル / 2017"
+  },
+  "articles": {
+    "prefixRule": "コミット接頭辞ルールについて",
+    "minimalistWebDesign": "ミニマリストWebデザイン: AstroとSCSSによるパフォーマンスと保守性の両立",
+    "chasing100": "100点を目指して: Webパフォーマンス最適化ガイド",
+    "componentBasedScss": "コンポーネント指向SCSS: 保守性の高いスタイルシート設計",
+    "logicOfSpace": "余白の論理: タイポグラフィとマージンがUIを決定づける仕組み",
+    "refactoringAsAHabit": "習慣としてのリファクタリング: 1年間の個人サイト更新から得た教訓",
+    "inclusiveDesign": "Webにおけるインクルーシブデザイン: アクセシブルなダークモードとカラーシステムの構築",
+    "applyingProductDesign": "プロダクトデザインのフレームワークをWeb開発に応用する",
+    "lightweightInteractions": "Vanilla JavaScriptで作る軽量なWebインタラクション",
+    "fromPrintToPixel": "印刷からピクセルへ: データ整合性の原則の応用",
+    "beyondThePortfolio": "ポートフォリオを超えて: 生きたデジタルプロダクトとしてのNuroHive"
+  },
+  "gannet": {
+    "title": "スポーツ用ウォーターボトル: Gannet",
+    "intro": "Gannetは、アスリートの疲労回復と水分補給を1つのパッケージでサポートするために設計された特別なスポーツウォーターボトルです。",
+    "featuresTitle": "主な特徴とメリット",
+    "feature1": "取り外し可能なアイシングシート — ボトル本体に直接組み込まれた着脱式の冷却シートが付属。",
+    "feature2": "運動後のリカバリーケア — 運動後にシートを腕や脚に巻き付けることで、疲労した筋肉をケアして回復を促します。"
+  }
+}

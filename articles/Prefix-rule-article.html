@@ -40,39 +40,64 @@
         <a href="/index.html#hero-section">Top</a
         ><a href="/index.html#works-section">Works</a
         ><a href="/index.html#articles-section">Articles</a>
+        <div class="lang-switch">
+          <!-- 言語切り替えトグルボタン -->
+          <button id="lang-toggle" type="button">EN</button>
+        </div>
       </div>
       <button id="theme-toggle"></button>
     </header>
     <main>
       <article id="article-main-section">
-        <h2 id="intro">Git commit prefix cheat sheet</h2>
-        <p>
+        <h2 id="intro" data-i18n="git.title">Git commit prefix cheat sheet</h2>
+        <p data-i18n="git.intro">
           Follow these standardized prefixes to keep your git history clean,
           readable, and structured.
         </p>
 
         <img src="/favicon.svg" alt="" style="width: 20px; margin: auto" />
 
-        <h2 id="development">Features and bug fixes</h2>
+        <h2 id="development" data-i18n="git.devTitle">
+          Features and bug fixes
+        </h2>
         <p>
-          <code>feat:</code> — Adding a new feature or functionality.<br />
-          <code>fix:</code> — Resolving a bug or unexpected behavior.<br />
-          <code>refactor:</code> — Rewriting code to improve structure without
-          changing behavior.<br />
-          <code>perf:</code> — Improving performance, memory, or execution
-          speed.
+          <code data-i18n="git.prefixes.feat">feat:</code>
+          <span data-i18n="git.desc.feat"
+            >— Adding a new feature or functionality.</span
+          ><br />
+          <code data-i18n="git.prefixes.fix">fix:</code>
+          <span data-i18n="git.desc.fix"
+            >— Resolving a bug or unexpected behavior.</span
+          ><br />
+          <code data-i18n="git.prefixes.refactor">refactor:</code>
+          <span data-i18n="git.desc.refactor"
+            >— Rewriting code to improve structure without changing
+            behavior.</span
+          ><br />
+          <code data-i18n="git.prefixes.perf">perf:</code>
+          <span data-i18n="git.desc.perf"
+            >— Improving performance, memory, or execution speed.</span
+          >
         </p>
 
         <img src="/favicon.svg" alt="" style="width: 20px; margin: auto" />
 
-        <h2 id="maintenance">Documentation and chores</h2>
+        <h2 id="maintenance" data-i18n="git.maintTitle">
+          Documentation and chores
+        </h2>
         <p>
-          <code>docs:</code> — Updating documentation, READMEs, or article
-          titles.<br />
-          <code>style:</code> — Adjusting formatting, fixing typos, or tweaking
-          UI spacing.<br />
-          <code>chore:</code> — Updating dependencies, build tools, or config
-          files.
+          <code data-i18n="git.prefixes.docs">docs:</code>
+          <span data-i18n="git.desc.docs"
+            >— Updating documentation, READMEs, or article titles.</span
+          ><br />
+          <code data-i18n="git.prefixes.style">style:</code>
+          <span data-i18n="git.desc.style"
+            >— Adjusting formatting, fixing typos, or tweaking UI spacing.</span
+          ><br />
+          <code data-i18n="git.prefixes.chore">chore:</code>
+          <span data-i18n="git.desc.chore"
+            >— Updating dependencies, build tools, or config files.</span
+          >
         </p>
       </article>
       <section id="bottom-section"></section>
@@ -83,7 +108,7 @@
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
-        <h2 class="notranslate">Articles</h2>
+        <h2 class="notranslate">Contact</h2>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -128,5 +153,8 @@
     <script src="/js/scrolling-header.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/scroll-jump-later.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
+    <script src="/js/language.js"></script>
   </body>
 </html>

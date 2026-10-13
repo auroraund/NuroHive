@@ -37,8 +37,13 @@
       <img id="header-icon" src="/favicon.svg" alt="" />
       <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
       <div class="menu-container notranslate">
-        <a href="#hero-section">Top</a><a href="#works-section">Works</a
-        ><a href="#articles-section">Articles</a>
+        <a href="/index.html#hero-section">Top</a
+        ><a href="/index.html#works-section">Works</a
+        ><a href="/index.html#articles-section">Articles</a>
+        <div class="lang-switch">
+          <!-- 言語切り替えトグルボタン -->
+          <button id="lang-toggle" type="button">EN</button>
+        </div>
       </div>
       <button id="theme-toggle"></button>
     </header>
@@ -73,117 +78,55 @@
       <section id="works-section">
         <h2 class="notranslate">Works</h2>
         <p>
-          <a href="/works/gannet.html">Gannet / Icing WatterBottle / 2017</a>
-        </p>
-        <!--
-        <p>
-          <a href=""
-            >Minimalist Web Design: Achieving Performance and Maintainability
-            with Astro and SCSS</a
-          >
-        </>
-        <p>
-          <a href="">Chasing 100: A Guide to Optimizing Web Performance</a>
-        </p>
-        <p>
-          <a href=""
-            >Component-Based SCSS: Strategies for Maintainable Stylesheets</a
+          <a href="/works/gannet.html" data-i18n="works.gannet"
+            >Gannet / Icing WatterBottle / 2017</a
           >
         </p>
-        <p>
-          <a href=""
-            >The Logic of Space: How Typography and Margins Define UI</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Refactoring as a Habit: Lessons from a Year of Personal Site
-            Updates</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Inclusive Design on the Web: Implementing Accessible Dark Mode and
-            Color Systems</a
-          >
-        </p>
-        <p>
-          <a href="">Applying Product Design Frameworks to Web Development</a>
-        </p>
-        <p>
-          <a href=""
-            >Crafting Lightweight Web Interactions with Vanilla JavaScript</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >From Print to Pixel: Transferring Data Integrity Principles</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Beyond the Portfolio: NuroHive as a Living Digital Product</a
-          >
-        </p>
-        -->
       </section>
+
       <img src="/favicon.svg" alt="" style="width: 20px; margin: auto" />
+
       <section id="articles-section">
         <h2 class="notranslate">Articles</h2>
         <p>
-          <a href="/articles/Prefix-rule-article.html">Prefix rule article</a>
+          <a
+            href="/articles/Prefix-rule-article.html"
+            data-i18n="articles.prefixRule"
+            >Prefix rule article</a
+          >
         </p>
         <!--
-        <p>
-          <a href=""
-            >Minimalist Web Design: Achieving Performance and Maintainability
-            with Astro and SCSS</a
-          >
-        </p>
-        <p>
-          <a href="">Chasing 100: A Guide to Optimizing Web Performance</a>
-        </p>
-        <p>
-          <a href=""
-            >Component-Based SCSS: Strategies for Maintainable Stylesheets</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >The Logic of Space: How Typography and Margins Define UI</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Refactoring as a Habit: Lessons from a Year of Personal Site
-            Updates</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Inclusive Design on the Web: Implementing Accessible Dark Mode and
-            Color Systems</a
-          >
-        </p>
-        <p>
-          <a href="">Applying Product Design Frameworks to Web Development</a>
-        </p>
-        <p>
-          <a href=""
-            >Crafting Lightweight Web Interactions with Vanilla JavaScript</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >From Print to Pixel: Transferring Data Integrity Principles</a
-          >
-        </p>
-        <p>
-          <a href=""
-            >Beyond the Portfolio: NuroHive as a Living Digital Product</a
-          >
-        </p>
-        -->
+  <p>
+    <a href="" data-i18n="articles.minimalistWebDesign">Minimalist Web Design: Achieving Performance and Maintainability with Astro and SCSS</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.chasing100">Chasing 100: A Guide to Optimizing Web Performance</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.componentBasedScss">Component-Based SCSS: Strategies for Maintainable Stylesheets</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.logicOfSpace">The Logic of Space: How Typography and Margins Define UI</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.refactoringAsAHabit">Refactoring as a Habit: Lessons from a Year of Personal Site Updates</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.inclusiveDesign">Inclusive Design on the Web: Implementing Accessible Dark Mode and Color Systems</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.applyingProductDesign">Applying Product Design Frameworks to Web Development</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.lightweightInteractions">Crafting Lightweight Web Interactions with Vanilla JavaScript</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.fromPrintToPixel">From Print to Pixel: Transferring Data Integrity Principles</a>
+  </p>
+  <p>
+    <a href="" data-i18n="articles.beyondThePortfolio">Beyond the Portfolio: NuroHive as a Living Digital Product</a>
+  </p>
+  -->
       </section>
       <p class="title-call">
         <span class="title-call-track">
@@ -200,7 +143,7 @@
         action="https://formspree.io/f/myekwolr"
         method="POST"
       >
-        <h2 class="notranslate">Articles</h2>
+        <h2 class="notranslate">Contact</h2>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -246,5 +189,8 @@
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/scroll-jump-later.js"></script>
     <script src="/js/slideshow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
+    <script src="/js/language.js"></script>
   </body>
 </html>
