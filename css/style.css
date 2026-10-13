@@ -9,6 +9,7 @@
   --sub-color: rgb(235, 235, 235);
   --main-color: rgb(20, 20, 20);
   transition: color 0.45s ease;
+  --mobile-inline: 30px;
 }
 
 html.dark {
@@ -38,10 +39,14 @@ html {
 }
 
 #theme-toggle {
-  width: 20px;
-  height: 20px;
+  height: 24px;
+  min-width: 24px;
   background-color: var(--theme-toggle-color);
   border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 2px 2px 4px -2px rgb(0, 0, 0);
   transition: background-color 0.45s ease, transform 0.2s ease;
 }
 #theme-toggle:hover {
@@ -68,11 +73,9 @@ html body a:hover {
 }
 html body header {
   height: 100px;
-  padding-inline: 60px;
+  padding-inline: var(--mobile-inline);
   display: flex;
   justify-content: space-between;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
   align-items: center;
   border-bottom: solid 1px;
   font-size: 1.1rem;
@@ -83,8 +86,14 @@ html body header {
   z-index: 100;
   transition: height 0.45s ease, padding 0.45s ease, font-size 0.45s ease, background-color 0.45s ease, border-color 0.45s ease;
 }
+html body header #header-icon-and-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 html body header #header-icon {
   height: 24px;
+  min-width: 24px;
 }
 html body header .menu-container {
   display: flex;
@@ -126,7 +135,7 @@ html body .work-data #work-subtitle {
   font-weight: 500;
 }
 html body main {
-  padding: 60px 60px;
+  padding: var(--mobile-inline);
   display: flex;
   flex-direction: column;
   row-gap: 60px;
@@ -260,7 +269,7 @@ html body footer .contact-form {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px;
+  padding: var(--mobile-inline);
 }
 html body footer .contact-form .form-group {
   display: flex;
@@ -309,7 +318,7 @@ html body footer #footer-inline-copyright .copyright-inner {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 60px;
+  padding: var(--mobile-inline);
   font-size: 0.85rem;
   color: #aaa;
 }

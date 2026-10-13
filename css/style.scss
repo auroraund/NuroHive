@@ -12,6 +12,8 @@
 
   // background-color の transition を削除（色変化のアニメーションによる白チラつきを防止）
   transition: color 0.45s ease;
+
+  --mobile-inline: 30px;
 }
 
 html.dark {
@@ -44,10 +46,14 @@ html {
 }
 
 #theme-toggle {
-  width: 20px;
-  height: 20px;
+  height: 24px;
+  min-width: 24px;
   background-color: var(--theme-toggle-color);
   border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 2px 2px 4px -2px rgb(0, 0, 0);
 
   transition:
     background-color 0.45s ease,
@@ -83,10 +89,9 @@ html {
 
     header {
       height: 100px;
-      padding-inline: 60px;
+      padding-inline: var(--mobile-inline);
       display: flex;
       justify-content: space-between;
-      column-gap: 20px;
       align-items: center;
       border-bottom: solid 1px;
       font-size: 1.1rem;
@@ -104,8 +109,15 @@ html {
         background-color 0.45s ease,
         border-color 0.45s ease;
 
+      #header-icon-and-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
       #header-icon {
         height: 24px;
+        min-width: 24px;
       }
 
       .menu-container {
@@ -156,7 +168,7 @@ html {
     }
 
     main {
-      padding: 60px 60px;
+      padding: var(--mobile-inline);
       display: flex;
       flex-direction: column;
       row-gap: 60px;
@@ -315,7 +327,7 @@ html {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px;
+        padding: var(--mobile-inline);
 
         .form-group {
           display: flex;
@@ -371,7 +383,7 @@ html {
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
-          padding: 30px 60px;
+          padding: var(--mobile-inline);
           font-size: 0.85rem;
           color: #aaa;
 
