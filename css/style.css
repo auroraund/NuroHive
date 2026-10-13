@@ -117,7 +117,6 @@ html body header.is-scrolled {
   height: 50px;
   font-size: 1rem;
   background-color: var(--header-bg);
-  border-color: transparent;
 }
 html body header.is-scrolled a {
   border-bottom: solid 1px;
@@ -330,6 +329,12 @@ html body footer #footer-inline-copyright .copyright-inner {
   padding: var(--mobile-inline);
   font-size: 0.85rem;
   color: #aaa;
+}
+@media (max-width: 800px) {
+  html body footer #footer-inline-copyright .copyright-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 html body footer #footer-inline-copyright .copyright-inner a {
   color: #aaa;

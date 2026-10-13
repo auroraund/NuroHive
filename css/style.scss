@@ -142,7 +142,6 @@ html {
         height: 50px;
         font-size: 1rem;
         background-color: var(--header-bg);
-        border-color: transparent;
 
         a {
           border-bottom: solid 1px; //Add underlines to header links
@@ -394,6 +393,11 @@ html {
           padding: var(--mobile-inline);
           font-size: 0.85rem;
           color: #aaa;
+
+          @media (max-width: 800px) {
+            flex-direction: column;
+            gap: 10px;
+          }
 
           a {
             color: #aaa;
