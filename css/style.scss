@@ -260,38 +260,43 @@ html {
         }
       }
 
-      .work-data {
+      /* ==========================================================================
+   Page Header Data (.work-data, .article-data)
+   ========================================================================== */
+      .work-data,
+      .article-data {
         text-align: center;
         padding-inline: var(--padding-inline);
 
-        #work-title {
+        /* タイトル & サブタイトルの共通定義 */
+        [id$="-title"] {
           font-size: 2rem;
           font-weight: 600;
           margin-bottom: 8px;
         }
 
-        #work-subtitle {
+        [id$="-subtitle"] {
           font-size: 1.2rem;
           font-weight: 500;
         }
       }
 
       .article-data {
-        text-align: center;
+        margin-top: 60px; /* main-flex-gap */
+      }
+
+      /* ==========================================================================
+   Sections & Article Layout
+   ========================================================================== */
+      #works-section,
+      #articles-section,
+      #article-main-section {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        line-height: 1.4rem;
+        scroll-margin-top: 80px;
         padding-inline: var(--padding-inline);
-
-        margin-top: 60px; //main-flex-gap
-
-        #article-title {
-          font-size: 2rem;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-
-        #article-subtitle {
-          font-size: 1.2rem;
-          font-weight: 500;
-        }
       }
 
       .index-text-link {
@@ -300,35 +305,6 @@ html {
           font-weight: 600;
           border-bottom: solid 1px;
         }
-      }
-
-      #works-section {
-        display: flex;
-        flex-direction: column;
-        row-gap: 4px;
-        padding-inline: var(--padding-inline);
-
-        scroll-margin-top: 80px;
-      }
-
-      #articles-section {
-        line-height: 1.4rem;
-        display: flex;
-        flex-direction: column;
-        row-gap: 4px;
-        padding-inline: var(--padding-inline);
-
-        scroll-margin-top: 80px;
-      }
-
-      #article-main-section {
-        line-height: 1.4rem;
-        display: flex;
-        flex-direction: column;
-        row-gap: 30px;
-        padding-inline: var(--padding-inline);
-
-        scroll-margin-top: 80px;
       }
 
       .title-call {
