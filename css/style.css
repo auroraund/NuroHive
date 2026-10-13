@@ -144,7 +144,7 @@ html body h2 {
 html body main {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 60px;
   max-width: var(--contents-max-width);
   margin: auto;
   margin-top: 100px; /* Same value as the header's height */
@@ -278,7 +278,7 @@ html body main .title-call {
   overflow: hidden;
   width: 100%;
   line-height: 15rem;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 html body main .title-call .title-call-track {
   display: flex;
