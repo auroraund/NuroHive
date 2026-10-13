@@ -232,7 +232,7 @@ html body main .work-data #work-subtitle {
 html body main .article-data {
   text-align: center;
   padding-inline: var(--padding-inline);
-  margin-top: 30px;
+  margin-top: 60px;
 }
 html body main .article-data #article-title {
   font-size: 2rem;
