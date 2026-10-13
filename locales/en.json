@@ -27,17 +27,7 @@
     "gannet": "Gannet / Icing WatterBottle / 2017"
   },
   "articles": {
-    "prefixRule": "Prefix rule article",
-    "minimalistWebDesign": "Minimalist Web Design: Achieving Performance and Maintainability with Astro and SCSS",
-    "chasing100": "Chasing 100: A Guide to Optimizing Web Performance",
-    "componentBasedScss": "Component-Based SCSS: Strategies for Maintainable Stylesheets",
-    "logicOfSpace": "The Logic of Space: How Typography and Margins Define UI",
-    "refactoringAsAHabit": "Refactoring as a Habit: Lessons from a Year of Personal Site Updates",
-    "inclusiveDesign": "Inclusive Design on the Web: Implementing Accessible Dark Mode and Color Systems",
-    "applyingProductDesign": "Applying Product Design Frameworks to Web Development",
-    "lightweightInteractions": "Crafting Lightweight Web Interactions with Vanilla JavaScript",
-    "fromPrintToPixel": "From Print to Pixel: Transferring Data Integrity Principles",
-    "beyondThePortfolio": "Beyond the Portfolio: NuroHive as a Living Digital Product"
+    "prefixRule": "Git issue prefix rules for NuroHive"
   },
   "gannet": {
     "title": "Sports water bottle: Gannet",

@@ -27,17 +27,7 @@
     "gannet": "Gannet / アイシングウォーターボトル / 2017"
   },
   "articles": {
-    "prefixRule": "コミット接頭辞ルールについて",
-    "minimalistWebDesign": "ミニマリストWebデザイン: AstroとSCSSによるパフォーマンスと保守性の両立",
-    "chasing100": "100点を目指して: Webパフォーマンス最適化ガイド",
-    "componentBasedScss": "コンポーネント指向SCSS: 保守性の高いスタイルシート設計",
-    "logicOfSpace": "余白の論理: タイポグラフィとマージンがUIを決定づける仕組み",
-    "refactoringAsAHabit": "習慣としてのリファクタリング: 1年間の個人サイト更新から得た教訓",
-    "inclusiveDesign": "Webにおけるインクルーシブデザイン: アクセシブルなダークモードとカラーシステムの構築",
-    "applyingProductDesign": "プロダクトデザインのフレームワークをWeb開発に応用する",
-    "lightweightInteractions": "Vanilla JavaScriptで作る軽量なWebインタラクション",
-    "fromPrintToPixel": "印刷からピクセルへ: データ整合性の原則の応用",
-    "beyondThePortfolio": "ポートフォリオを超えて: 生きたデジタルプロダクトとしてのNuroHive"
+    "prefixRule": "NuroHiveにおけるgit issueのプリフィックスルール"
   },
   "gannet": {
     "title": "スポーツ用ウォーターボトル: Gannet",
