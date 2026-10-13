@@ -259,6 +259,7 @@ html {
 
       .work-data {
         text-align: center;
+        padding-inline: var(--padding-inline);
 
         #work-title {
           font-size: 2rem;
@@ -274,6 +275,8 @@ html {
 
       .article-data {
         text-align: center;
+        padding-inline: var(--padding-inline);
+
         margin-top: 60px; //main-flex-gap
 
         #article-title {
