@@ -72,7 +72,6 @@ html body {
 }
 html body a {
   display: inline-block;
-  border-bottom: solid 1px;
   transform-origin: left;
   transition: color 0.025s ease, transform 0.025s ease;
 }
@@ -100,6 +99,10 @@ html body header #header-icon-and-logo-container {
   align-items: center;
   gap: 10px;
 }
+html body header #menu-flex-container {
+  display: flex;
+  gap: 20px;
+}
 html body header #header-icon {
   height: 24px;
   min-width: 24px;
@@ -107,19 +110,12 @@ html body header #header-icon {
 html body header .menu-container {
   display: flex;
   margin-left: auto;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-}
-html body header a {
-  border-bottom: solid 0;
+  gap: 10px;
 }
 html body header.is-scrolled {
   height: 50px;
   font-size: 1rem;
   background-color: var(--header-bg);
-}
-html body header.is-scrolled a {
-  border-bottom: solid 1px;
 }
 html body h2 {
   text-align: center;
@@ -141,6 +137,14 @@ html body .work-data #work-title {
 html body .work-data #work-subtitle {
   font-size: 1.2rem;
   font-weight: 500;
+}
+html body .article-data {
+  text-align: center;
+  margin-top: 20px;
+}
+html body .article-data #article-title {
+  font-size: 2rem;
+  font-weight: 600;
 }
 html body main {
   padding: var(--mobile-inline);
@@ -396,7 +400,7 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
   }
   /* ハンバーガーボタンの変形（サイズ変更に合わせて移動距離を調整） */
   #hamburger-toggle.is-active span:nth-child(1) {
-    transform: translateY(6.5px) rotate(45deg);
+    transform: translateY(7.5px) rotate(45deg);
   }
   #hamburger-toggle.is-active span:nth-child(2) {
     opacity: 0;
