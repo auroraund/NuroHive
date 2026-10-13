@@ -82,7 +82,6 @@ html {
 
     a {
       display: inline-block; // Prerequisites for the transform to work correctly
-      border-bottom: solid 1px;
       transform-origin: left; //Criteria for Growth
 
       transition:
@@ -123,6 +122,11 @@ html {
         gap: 10px;
       }
 
+      #menu-flex-container {
+        display: flex;
+        gap: 20px;
+      }
+
       #header-icon {
         height: 24px;
         min-width: 24px;
@@ -131,21 +135,13 @@ html {
       .menu-container {
         display: flex;
         margin-left: auto;
-        column-gap: 20px;
-      }
-
-      a {
-        border-bottom: solid 0;
+        gap: 10px;
       }
 
       &.is-scrolled {
         height: 50px;
         font-size: 1rem;
         background-color: var(--header-bg);
-
-        a {
-          border-bottom: solid 1px; //Add underlines to header links
-        }
       }
     }
 
@@ -171,6 +167,16 @@ html {
       #work-subtitle {
         font-size: 1.2rem;
         font-weight: 500;
+      }
+    }
+
+    .article-data {
+      text-align: center;
+      margin-top: 20px;
+
+      #article-title {
+        font-size: 2rem;
+        font-weight: 600;
       }
     }
 
@@ -472,7 +478,7 @@ html {
 
   /* ハンバーガーボタンの変形（サイズ変更に合わせて移動距離を調整） */
   #hamburger-toggle.is-active span:nth-child(1) {
-    transform: translateY(6.5px) rotate(45deg);
+    transform: translateY(7.5px) rotate(45deg);
   }
   #hamburger-toggle.is-active span:nth-child(2) {
     opacity: 0;
