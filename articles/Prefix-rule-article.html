@@ -33,16 +33,28 @@
   </head>
   <body>
     <div id="page-loader"></div>
-    <header id="header">
+        <header id="header">
       <div id="header-icon-and-logo-container">
         <img id="header-icon" src="/images/main-logo.png" alt="" />
         <h1><a class="notranslate" href="/index.html">NuroHive</a></h1>
       </div>
+
+      <!-- 800px以下で表示されるハンバーガーボタン -->
+      <button
+        id="hamburger-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="menu-container notranslate">
-        <a href="/index.html#hero-section">Top</a
-        ><a href="/index.html#works-section">Works</a
-        ><a href="/index.html#articles-section">Articles</a
-        ><a href="#contact-section">Contact</a>
+        <a href="/index.html#hero-section">Top</a>
+        <a href="/index.html#works-section">Works</a>
+        <a href="/index.html#articles-section">Articles</a>
+        <a href="#contact-section">Contact</a>
         <div class="lang-switch">
           <!-- 言語切り替えトグルボタン -->
           <button id="lang-toggle" type="button">EN</button>
@@ -169,5 +181,6 @@
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
     <script src="/js/language.js"></script>
     <script src="/js/loading.js"></script>
+    <script src="/js/header-responsive.js"></script>
   </body>
 </html>

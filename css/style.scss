@@ -418,3 +418,66 @@ html {
     }
   }
 }
+
+/* 画面幅 800px 以下の設定 */
+@media screen and (max-width: 800px) {
+  /* ハンバーガーボタンを表示（サイズを小型化） */
+  #hamburger-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px; /* 30px から 22px に小型化 */
+    height: 16px; /* 22px から 16px に小型化 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    color: inherit;
+  }
+
+  /* 線の設定（太さを 3px に変更） */
+  #hamburger-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px; /* 2px から 3px に太く変更 */
+    background-color: currentColor;
+    border-radius: 1px; /* 線の角を少し丸めて綺麗に見せる */
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  /* 800px以下では menu-container を初期状態で完全に非表示にする */
+  header .menu-container {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    z-index: 1000;
+  }
+
+  /* メニューが開いた時 */
+  header .menu-container.is-active {
+    display: flex !important;
+  }
+
+  /* ハンバーガーボタンの変形（サイズ変更に合わせて移動距離を調整） */
+  #hamburger-toggle.is-active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  #hamburger-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger-toggle.is-active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+}
