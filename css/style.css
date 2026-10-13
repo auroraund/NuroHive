@@ -215,6 +215,7 @@ html body main #hero-section .slideshow-container .slideshow-dots .dot.active {
 }
 html body main .work-data {
   text-align: center;
+  padding-inline: var(--padding-inline);
 }
 html body main .work-data #work-title {
   font-size: 2rem;
@@ -227,6 +228,7 @@ html body main .work-data #work-subtitle {
 }
 html body main .article-data {
   text-align: center;
+  padding-inline: var(--padding-inline);
   margin-top: 60px;
 }
 html body main .article-data #article-title {
