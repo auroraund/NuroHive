@@ -45,6 +45,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ダブルタップによるズームを無効化 */
+html,
+body,
+button,
+a {
+  touch-action: manipulation;
+}
+
 #theme-toggle {
   height: 40px;
   min-width: 40px;
