@@ -6,7 +6,7 @@ const layoutItems = () => {
   let numColumns = 2;
   if (screenWidth > 1200) numColumns = 4;
   else if (screenWidth > 768) numColumns = 3;
-  else if (screenWidth <= 480) numColumns = 1;
+  else if (screenWidth <= 480) numColumns = 2;
   const columnHeights = new Array(numColumns).fill(0);
   const containerWidth = container.offsetWidth;
   const itemWidth = (containerWidth - gutter * (numColumns - 1)) / numColumns;
