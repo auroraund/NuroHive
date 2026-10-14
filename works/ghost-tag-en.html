@@ -12,10 +12,10 @@
         document.documentElement.classList.add("dark");
       }
 
-      // ユーザーが明示的に日本語を選択している場合のみ日本語版記事へリダイレクト
+      // ユーザーが明示的に日本語を選択している場合のみ日本語ページへリダイレクト
       const savedLang = localStorage.getItem("user_lang");
       if (savedLang === "ja") {
-        window.location.replace("/articles/Prefix-rule-article.html");
+        window.location.replace("/works/ghost-tag.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -27,6 +27,12 @@
       media="all"
     />
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/css/masonry.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,7 +40,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>NuroHive</title>
+    <title>Ghost Tag — NuroHive</title>
   </head>
   <body>
     <div id="page-loader"></div>
@@ -46,10 +52,10 @@
 
       <div id="menu-flex-container">
         <div class="lang-switch">
-          <!-- 日本語版記事へ切り替えるリンク -->
+          <!-- 日本語版へ切り替えるリンク -->
           <a
             id="lang-toggle"
-            href="/articles/Prefix-rule-article.html"
+            href="/works/ghost-tag.html"
             onclick="localStorage.setItem('user_lang', 'ja')"
             >JA</a
           >
@@ -74,15 +80,50 @@
     </header>
     <button id="theme-toggle"></button>
     <main>
-      <div class="article-data">
-        <p id="article-title">Git issue prefix rules for NuroHive</p>
-        <p id="article-subtitle">Git / 2026</p>
+      <section id="hero-section">
+        <div class="slideshow-container">
+          <!-- スライド本体 -->
+          <div class="slideshow-track">
+            <div class="slide active">
+              <img
+                src="https://nurohive.gallerycdn.vsassets.io/extensions/nurohive/ghosttag/1.0.6/1772276000180/Microsoft.VisualStudio.Services.Icons.Default"
+                alt="Ghost Tag Hero Image 1"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/ghost-tag-demo.png"
+                alt="Ghost Tag Hero Image 2"
+              />
+            </div>
+          </div>
+
+          <!-- インジケーター（ドット） -->
+          <div class="slideshow-dots">
+            <button
+              type="button"
+              class="dot active"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              type="button"
+              class="dot"
+              aria-label="Go to slide 2"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="work-data">
+        <p id="work-title">Ghost Tag</p>
+        <p id="work-subtitle">VS Code Extension / 2026</p>
       </div>
-      <article id="article-main-section">
-        <h2 id="intro">Git commit prefix cheat sheet</h2>
+      <section id="article-main-section">
+        <h2 id="intro">Ghost Tag: Real-time Bi-directional Auto Rename Tag</h2>
         <p>
-          Follow these standardized prefixes to keep your git history clean,
-          readable, and structured.
+          Ghost Tag is a high-performance VS Code extension engineered for
+          precision, speed, and structural stability when synchronizing HTML/XML
+          tags.
         </p>
 
         <img
@@ -91,14 +132,17 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="development">Features and bug fixes</h2>
+        <h2 id="key-features">Key Features</h2>
         <p>
-          <code>feat:</code> — Adding a new feature or functionality.<br />
-          <code>fix:</code> — Resolving a bug or unexpected behavior.<br />
-          <code>refactor:</code> — Rewriting code to improve structure without
-          changing behavior.<br />
-          <code>perf:</code> — Improving performance, memory, or execution
-          speed.
+          Bi-directional Real-time Sync — Seamlessly synchronizes opening and
+          closing tag modifications in real-time.<br />
+          Context Awareness — Accurately tracks deeply nested structures using a
+          stack-based pairing algorithm.<br />
+          Collision Prevention — Intelligent multi-cursor handling to prevent
+          text corruption.<br />
+          Attribute-Safe & Self-Closing Support — Correctly identifies tags even
+          with complex attributes and self-closing elements (&lt;img /&gt;,
+          &lt;br /&gt;).
         </p>
 
         <img
@@ -107,16 +151,56 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="maintenance">Documentation and chores</h2>
+        <h2 id="supported-languages">Supported Languages</h2>
         <p>
-          <code>docs:</code> — Updating documentation, READMEs, or article
-          titles.<br />
-          <code>style:</code> — Adjusting formatting, fixing typos, or tweaking
-          UI spacing.<br />
-          <code>chore:</code> — Updating dependencies, build tools, or config
-          files.
+          ・HTML / XML<br />
+          ・React (JSX / TSX)<br />
+          ・Vue / Svelte<br />
+          ・PHP / Blade
         </p>
-      </article>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="changelog">Changelog</h2>
+        <p>
+          <strong>v1.0.6</strong> — Fixed self-closing tag handling. Elements
+          like &lt;img /&gt; and &lt;br /&gt; no longer disrupt the nesting
+          stack. Enhanced regex scanning.<br />
+          <strong>v1.0.5</strong> — Fixed multi-attribute tag support and
+          resolved incorrect pairing in deep nested structures.<br />
+          <strong>v1.0.4</strong> — Handled "empty tag name" scenarios
+          (&lt;&gt;) and switched to manual Range calculation for 100%
+          coordinate accuracy.<br />
+          <strong>v1.0.0 - v1.0.3</strong> — Initial Release: Core
+          bi-directional synchronization and basic nesting support.
+        </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="links">Links</h2>
+        <p>
+          ・<a
+            href="https://github.com/auroraund/ghost-tag"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub Repository</a
+          ><br />
+          ・<a
+            href="https://marketplace.visualstudio.com/items?itemName=auroraund.ghost-tag"
+            target="_blank"
+            rel="noopener noreferrer"
+            >VS Code Marketplace (Microsoft)</a
+          >
+        </p>
+      </section>
     </main>
     <footer>
       <form
@@ -169,5 +253,6 @@
     <script src="/js/slideshow.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
   </body>
 </html>

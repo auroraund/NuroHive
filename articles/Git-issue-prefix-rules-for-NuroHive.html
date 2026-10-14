@@ -16,9 +16,9 @@
       const savedLang = localStorage.getItem("user_lang");
       if (!savedLang) {
         localStorage.setItem("user_lang", "en");
-        window.location.replace("/articles/Prefix-rule-article-en.html");
+        window.location.replace("/articles/Git-issue-prefix-rules-for-NuroHive-en.html");
       } else if (savedLang === "en") {
-        window.location.replace("/articles/Prefix-rule-article-en.html");
+        window.location.replace("/articles/Git-issue-prefix-rules-for-NuroHive-en.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -52,7 +52,7 @@
           <!-- 英語版記事へ切り替えるリンク -->
           <a
             id="lang-toggle"
-            href="/articles/Prefix-rule-article-en.html"
+            href="/articles/Git-issue-prefix-rules-for-NuroHive-en.html"
             onclick="localStorage.setItem('user_lang', 'en')"
             >EN</a
           >
@@ -170,5 +170,6 @@
     <script src="/js/slideshow.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
   </body>
 </html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // テーマ状態の初期適用
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (savedTheme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // ユーザーが明示的に日本語を選択している場合のみ日本語ページへリダイレクト
+      const savedLang = localStorage.getItem("user_lang");
+      if (savedLang === "ja") {
+        window.location.replace("/works/masonry.html");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="/css/destyle-customize.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/css/masonry.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Responsive Pure JS Masonry — NuroHive</title>
+  </head>
+  <body>
+    <div id="page-loader"></div>
+    <header id="header">
+      <div id="header-icon-and-logo-container">
+        <img id="header-icon" src="/images/main-logo.png" alt="" />
+        <h1><a href="/index-en.html">NuroHive</a></h1>
+      </div>
+
+      <div id="menu-flex-container">
+        <div class="lang-switch">
+          <!-- 日本語版へ切り替えるリンク -->
+          <a
+            id="lang-toggle"
+            href="/works/masonry.html"
+            onclick="localStorage.setItem('user_lang', 'ja')"
+            >JA</a
+          >
+        </div>
+        <!-- 800px以下で表示されるハンバーガーボタン -->
+        <button
+          id="hamburger-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="menu-container">
+          <a href="/index-en.html#hero-section">Top</a>
+          <a href="/index-en.html#works-section">Works</a>
+          <a href="/index-en.html#articles-section">Articles</a>
+          <a href="#contact-section">Contact</a>
+        </div>
+      </div>
+    </header>
+    <button id="theme-toggle"></button>
+    <main>
+      <section id="hero-section">
+        <div class="slideshow-container">
+          <!-- スライド本体 -->
+          <div class="slideshow-track">
+            <div class="slide active">
+              <img src="/images/masonry.png" alt="Masonry Hero Image 1" />
+            </div>
+            <div class="slide">
+              <img src="/images/masonry.png" alt="Masonry Hero Image 2" />
+            </div>
+          </div>
+
+          <!-- インジケーター（ドット） -->
+          <div class="slideshow-dots">
+            <button
+              type="button"
+              class="dot active"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              type="button"
+              class="dot"
+              aria-label="Go to slide 2"
+            ></button>
+          </div>
+        </div>
+      </section>
+      <div class="work-data">
+        <p id="work-title">Responsive Pure JS Masonry</p>
+        <p id="work-subtitle">JavaScript & SCSS / 2025</p>
+      </div>
+      <section id="article-main-section">
+        <h2 id="intro">Pure JavaScript Masonry Layout</h2>
+        <p>
+          A lightweight, dependency-free Masonry layout template built with
+          vanilla JavaScript and SCSS. It dynamically calculates item
+          positioning after all images have fully loaded, delivering precise
+          responsive column layouts across various screen sizes.
+        </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="key-features">Key Features</h2>
+        <p>
+          Zero Dependencies — Built entirely with Pure JS and SCSS without
+          relying on jQuery or external libraries, making it fast and easy to
+          port into any web project.<br />
+          Image Load Detection — Uses Promise.all to wait for all image assets
+          to load before calculating layout heights, preventing overlap and
+          layout shifts.<br />
+          Responsive & Smooth Transitions — Dynamically recalculates column
+          counts on window resize with CSS transition support for fluid card
+          repositioning.
+        </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="links">Links</h2>
+        <p>
+          ・<a
+            href="https://github.com/auroraund/masonry-custamize"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub Repository</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer>
+      <form
+        class="contact-form"
+        id="contact-section"
+        action="https://formspree.io/f/myekwolr"
+        method="POST"
+      >
+        <h2>Contact</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <div id="footer-inline-copyright">
+        <div class="copyright-inner">
+          <p>Built by Auroraund</p>
+
+          <div class="footer-links">
+            <a href="https://x.com/nurohive" target="_blank" rel="noopener"
+              >X (@NuroHive)</a
+            >
+            <a
+              href="https://github.com/auroraund"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </div>
+
+          <p>© 2026 NuroHive</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scrolling-header.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/slideshow.js"></script>
+    <script src="/js/loading.js"></script>
+    <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
+  </body>
+</html>

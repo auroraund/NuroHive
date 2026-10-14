@@ -2,23 +2,23 @@
 <html lang="ja">
   <head>
     <script>
-      // テーマ状態の初期適用
+      // テーマ適用
       const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else if (savedTheme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      if (
+        savedTheme === "dark" ||
+        (!savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
         document.documentElement.classList.add("dark");
       }
 
-      // 初回訪問時（未設定時）または user_lang が 'en' の場合は英語版詳細へリダイレクト
+      // 言語リダイレクト処理（初回は英語版を表示）
       const savedLang = localStorage.getItem("user_lang");
       if (!savedLang) {
         localStorage.setItem("user_lang", "en");
-        window.location.replace("/works/gannet-en.html");
+        window.location.replace("/index-en.html");
       } else if (savedLang === "en") {
-        window.location.replace("/works/gannet-en.html");
+        window.location.replace("/index-en.html");
       }
     </script>
     <meta charset="UTF-8" />
@@ -30,6 +30,12 @@
       media="all"
     />
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/css/masonry.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -127,6 +133,29 @@
           運動後のサポート —
           運動後にシートを腕や足に巻きつけることで、疲労した筋肉をケアして回復を促します。
         </p>
+
+        <!-- ここに区切りロゴを追加 -->
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="intro">Gallery</h2>
+        <div id="container">
+          <div class="item">
+            <img src="/images/gannet-hero.png" alt="" />
+            <p>all</p>
+          </div>
+          <div class="item">
+            <img src="/images/gannet-open.png" alt="" />
+            <p>Front</p>
+          </div>
+          <div class="item">
+            <img src="/images/gunnet-2d.png" alt="" />
+            <p>Main Visual</p>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -183,5 +212,6 @@
     <script src="/js/slideshow.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
   </body>
 </html>

@@ -27,6 +27,12 @@
       media="all"
     />
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/css/masonry.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,10 +84,13 @@
           <!-- スライド本体 -->
           <div class="slideshow-track">
             <div class="slide active">
-              <img src="/images/quaira-hero.png" alt="Quaira Hero Image 1" />
+              <img src="/images/quaira-camera.png" alt="Quaira Hero Image 1" />
             </div>
             <div class="slide">
               <img src="/images/gannet-hero.png" alt="Quaira Hero Image 2" />
+            </div>
+            <div class="slide">
+              <img src="/images/terminal.png" alt="Quaira Hero Image 2" />
             </div>
           </div>
 
@@ -109,9 +118,53 @@
       <!-- 単一のコンテンツセクションに統合してギャップをGannetと完全一致させる -->
       <section id="works-and-articles-section" class="content-section">
         <h2 id="works-section">Works</h2>
-        <p>
-          <a href="/works/gannet-en.html">Gannet — Icing WaterBottle / 2017</a>
-        </p>
+        <div id="container">
+          <a href="/works/gannet-en.html">
+            <div class="item">
+              <img src="/images/gunnet-2d.png" alt="" />
+              <p>Gannet</p>
+            </div></a
+          >
+          <a href="/works/ghost-tag-en.html">
+            <div class="item">
+              <img
+                src="https://nurohive.gallerycdn.vsassets.io/extensions/nurohive/ghosttag/1.0.6/1772276000180/Microsoft.VisualStudio.Services.Icons.Default"
+                alt=""
+              />
+              <p>Ghost Tag</p>
+            </div></a
+          >
+          <a href="/works/quaira-en.html">
+            <div class="item">
+              <img src="/images/quaira-hero.png" alt="" />
+              <p>Quaira</p>
+            </div></a
+          >
+          <a href="/works/turnover-en.html">
+            <div class="item">
+              <img src="/images/turnover.png" alt="" />
+              <p>Turnover</p>
+            </div></a
+          >
+          <a href="/works/masonry-en.html">
+            <div class="item">
+              <img src="/images/masonry.png" alt="" />
+              <p>Responsive Pure JS Masonry</p>
+            </div></a
+          >
+          <a href="/works/terminal-en.html">
+            <div class="item">
+              <img src="/images/terminal.png" alt="" />
+              <p>Terminal</p>
+            </div></a
+          >
+          <a href="/works/2d-rendering-en.html">
+            <div class="item">
+              <img src="/images/2d-rendering.png" alt="" />
+              <p>2D Rendering</p>
+            </div></a
+          >
+        </div>
 
         <img
           src="/images/main-logo.png"
@@ -121,7 +174,7 @@
 
         <h2 id="articles-section">Articles</h2>
         <p>
-          <a href="/articles/Prefix-rule-article-en.html">
+          <a href="/articles/Git-issue-prefix-rules-for-NuroHive-en.html">
             Git issue prefix rules for NuroHive — Git / 2026
           </a>
         </p>
@@ -187,5 +240,6 @@
     <script src="/js/slideshow.js"></script>
     <script src="/js/loading.js"></script>
     <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
   </body>
 </html>

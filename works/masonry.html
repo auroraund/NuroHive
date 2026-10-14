@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script>
+      // テーマ適用
+      const savedTheme = localStorage.getItem("theme");
+      if (
+        savedTheme === "dark" ||
+        (!savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // 言語リダイレクト処理（初回は英語版を表示）
+      const savedLang = localStorage.getItem("user_lang");
+      if (!savedLang) {
+        localStorage.setItem("user_lang", "en");
+        window.location.replace("/index-en.html");
+      } else if (savedLang === "en") {
+        window.location.replace("/index-en.html");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="/css/destyle-customize.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/css/masonry.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>NuroHive</title>
+  </head>
+  <body>
+    <div id="page-loader"></div>
+    <header id="header">
+      <div id="header-icon-and-logo-container">
+        <img id="header-icon" src="/images/main-logo.png" alt="" />
+        <h1><a href="/index.html">NuroHive</a></h1>
+      </div>
+
+      <div id="menu-flex-container">
+        <div class="lang-switch">
+          <!-- 英語版詳細へ切り替えるリンク -->
+          <a
+            id="lang-toggle"
+            href="/works/masonry-en.html"
+            onclick="localStorage.setItem('user_lang', 'en')"
+            >EN</a
+          >
+        </div>
+        <!-- 800px以下で表示されるハンバーガーボタン -->
+        <button
+          id="hamburger-toggle"
+          type="button"
+          aria-label="ナビゲーションの開閉"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="menu-container">
+          <a href="/index.html#hero-section">Top</a>
+          <a href="/index.html#works-section">Works</a>
+          <a href="/index.html#articles-section">Articles</a>
+          <a href="#contact-section">Contact</a>
+        </div>
+      </div>
+    </header>
+    <button id="theme-toggle"></button>
+    <main>
+      <section id="hero-section">
+        <div class="slideshow-container">
+          <!-- スライド本体 -->
+          <div class="slideshow-track">
+            <div class="slide active">
+              <img src="/images/masonry.png" alt="Quaira Hero Image 1" />
+            </div>
+            <div class="slide">
+              <img src="/images/masonry.png" alt="Quaira Hero Image 2" />
+            </div>
+          </div>
+
+          <!-- インジケーター（ドット） -->
+          <div class="slideshow-dots">
+            <button
+              type="button"
+              class="dot active"
+              aria-label="スライド1を表示"
+            ></button>
+            <button
+              type="button"
+              class="dot"
+              aria-label="スライド2を表示"
+            ></button>
+          </div>
+        </div>
+      </section>
+      <div class="work-data">
+        <p id="work-title">Responsive Pure JS Masonry</p>
+        <p id="work-subtitle">JavaScript & SCSS / 2025</p>
+      </div>
+      <section id="article-main-section">
+        <h2 id="intro">Pure JavaScript Masonry Layout</h2>
+        <p>
+          外部ライブラリに依存せず、バニラ JavaScript と SCSS
+          のみで完結する軽量なメイソンリー（カード型）レイアウトの移植用テンプレート。画像の読み込み完了を検知して動的に高さを再計算し、画面幅に応じたレスポンシブ配置を再現します。
+        </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="key-features">主な特徴と機能</h2>
+        <p>
+          依存ライブラリゼロ — jQuery や外部ライブラリを一切使わず、Pure JS
+          のみで動作するためプロジェクトへ素早く移植可能。<br />
+          画像読み込み完了の自動検知 — Promise.all
+          を用いて全画像の読み込み完了を待機してからレイアウトを計算するため、画像の重なりや表示崩れを防止。<br />
+          レスポンシブ＆アニメーション —
+          ウィンドウのリサイズに連動してカラム数を動的に切り替え。CSS Transition
+          による滑らかなカード移動を実現。
+        </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="links">リンク</h2>
+        <p>
+          ・<a
+            href="https://github.com/auroraund/masonry-custamize"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub Repository</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer>
+      <form
+        class="contact-form"
+        id="contact-section"
+        action="https://formspree.io/f/myekwolr"
+        method="POST"
+      >
+        <h2 class="notranslate">Contact</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- 外枠：画面横幅100%で上ボーダーを引く -->
+      <div id="footer-inline-copyright">
+        <div class="copyright-inner">
+          <!-- 制作者（個人）のクレジット -->
+          <p>Built by Auroraund</p>
+
+          <!-- 公式アカウント（NuroHive）と開発者リンク -->
+          <div class="footer-links">
+            <a href="https://x.com/nurohive" target="_blank" rel="noopener"
+              >X (@NuroHive)</a
+            >
+            <a
+              href="https://github.com/auroraund"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </div>
+
+          <p>© 2026 NuroHive</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scrolling-header.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/slideshow.js"></script>
+    <script src="/js/loading.js"></script>
+    <script src="/js/header-responsive.js"></script>
+    <script src="/js/masonry.js"></script>
+  </body>
+</html>
