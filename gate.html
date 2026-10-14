@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/destyle-customize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Protected Area — NuroHive</title>
+    <style>
+      .auth-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+      }
+      .auth-box {
+        max-width: 320px;
+        width: 100%;
+      }
+      .auth-input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        border: 1px solid var(--border-color, #ccc);
+        border-radius: 4px;
+        background: transparent;
+        color: inherit;
+        font-size: 1rem;
+      }
+      .auth-button {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        background: #333;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .dark .auth-button {
+        background: #fff;
+        color: #000;
+      }
+      .error-msg {
+        color: #e53e3e;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="auth-container">
+      <div class="auth-box">
+        <img
+          src="/images/main-logo.png"
+          alt="NuroHive"
+          style="width: 32px; margin: 0 auto 1.5rem"
+        />
+        <h2>Password Required</h2>
+        <p style="font-size: 0.875rem; opacity: 0.7; margin-top: 0.5rem">
+          この先のコンテンツを閲覧するにはパスワードが必要です。
+        </p>
+        <form id="auth-form">
+          <input
+            type="password"
+            id="pass-input"
+            class="auth-input"
+            placeholder="Enter Password"
+            required
+            autofocus
+          />
+          <button type="submit" class="auth-button">Enter</button>
+        </form>
+        <p id="error-msg" class="error-msg">パスワードが正しくありません</p>
+      </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+  </body>
+</html>
