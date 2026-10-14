@@ -185,6 +185,12 @@ html {
         }
       }
 
+      .tools-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
       #hero-section {
         width: 100%;
         position: relative;

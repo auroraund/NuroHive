@@ -156,6 +156,11 @@ html body main {
     transform: translateX(-50%);
   }
 }
+html body main .tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 html body main #hero-section {
   width: 100%;
   position: relative;
