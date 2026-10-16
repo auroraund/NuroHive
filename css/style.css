@@ -471,4 +471,173 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
   #hamburger-toggle.is-active span:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
   }
+}
+/* 画像ラッパー */
+#container .item .img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+#container .item .img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* ホバー時のホバー感（カードが少し浮いて画像がわずかに拡大） */
+#container .item .img-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#container .item .img-wrapper:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.03);
+}
+
+/* 右下ズームバッジ */
+.zoom-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+#container .item .img-wrapper:hover .zoom-indicator {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* モーダル枠 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.2s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* リンク遷移用の右下アイコンバッジ */
+.link-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translate(-3px, 3px) scale(0.8); /* 少し左下から右上へ飛び出す動き */
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+/* カード全体にホバーした時に矢印バッジが斜め上にシュッと出てくる */
+#container a:hover .link-indicator {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+} /* 1. ズーム用アイコン（作品詳細ページ内の画像） */
+.zoom-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* 最初から見える半透明黒 */
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* 常時表示 */
+  transform: scale(0.9);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  backdrop-filter: blur(2px); /* 背景を少しボカして見やすく */
+}
+
+/* ホバー時にさらにポップアップ */
+#container .item .img-wrapper:hover .zoom-indicator {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.85); /* くっきり濃く */
+}
+
+/* 2. リンク用アイコン（トップ index.html のWorks一覧） */
+.link-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* 最初から見える半透明黒 */
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* 常時表示 */
+  transform: scale(0.9);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+/* ホバー時に右上へシュッと動いて浮き出る */
+#container a:hover .link-indicator {
+  transform: translate(2px, -2px) scale(1.1);
+  background-color: rgba(0, 0, 0, 0.85); /* くっきり濃く */
 }/*# sourceMappingURL=style.css.map */
