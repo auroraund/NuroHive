@@ -136,11 +136,13 @@
           alt=""
           style="width: 20px; margin: auto"
         />
-        <h2 id="intro">Ghost Tag: Real-time Bi-directional Auto Rename Tag</h2>
+        <h2 id="intro">About</h2>
         <p>
-          Ghost Tag is a high-performance VS Code extension engineered for
-          precision, speed, and structural stability when synchronizing HTML/XML
-          tags.
+          Ghost Tag is a bidirectional automatic tag synchronization extension
+          for VS Code, built for precision, speed, and parsing stability.
+          Utilizing a stack-based pairing algorithm, it accurately tracks
+          changes between opening and closing tags in real time, even within
+          deeply nested and complex HTML/XML structures.
         </p>
 
         <img
@@ -149,17 +151,14 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="key-features">Key Features</h2>
+        <h2 id="key-features">Features</h2>
         <p>
-          Bi-directional Real-time Sync — Seamlessly synchronizes opening and
-          closing tag modifications in real-time.<br />
-          Context Awareness — Accurately tracks deeply nested structures using a
-          stack-based pairing algorithm.<br />
-          Collision Prevention — Intelligent multi-cursor handling to prevent
-          text corruption.<br />
-          Attribute-Safe & Self-Closing Support — Correctly identifies tags even
-          with complex attributes and self-closing elements (&lt;img /&gt;,
-          &lt;br /&gt;).
+          Provides real-time bidirectional synchronization between opening and
+          closing tags. Equipped with smart multi-cursor handling and collision
+          prevention, it prevents layout breakdown and unintended rewrites
+          during multi-location editing. It also accurately parses tags with
+          attributes and self-closing tags (&lt;img /&gt;, &lt;br /&gt;),
+          delivering a smooth editing experience.
         </p>
 
         <img
@@ -170,10 +169,10 @@
 
         <h2 id="supported-languages">Supported Languages</h2>
         <p>
-          ・HTML / XML<br />
-          ・React (JSX / TSX)<br />
-          ・Vue / Svelte<br />
-          ・PHP / Blade
+          HTML / XML<br />
+          React (JSX / TSX)<br />
+          Vue / Svelte<br />
+          PHP / Blade
         </p>
 
         <img
@@ -184,16 +183,15 @@
 
         <h2 id="changelog">Changelog</h2>
         <p>
-          <strong>v1.0.6</strong> — Fixed self-closing tag handling. Elements
-          like &lt;img /&gt; and &lt;br /&gt; no longer disrupt the nesting
-          stack. Enhanced regex scanning.<br />
-          <strong>v1.0.5</strong> — Fixed multi-attribute tag support and
-          resolved incorrect pairing in deep nested structures.<br />
-          <strong>v1.0.4</strong> — Handled "empty tag name" scenarios
-          (&lt;&gt;) and switched to manual Range calculation for 100%
-          coordinate accuracy.<br />
-          <strong>v1.0.0 - v1.0.3</strong> — Initial Release: Core
-          bi-directional synchronization and basic nesting support.
+          v1.0.6 — Enhanced parsing logic and regex to ensure self-closing tags
+          (&lt;img /&gt;, &lt;br /&gt;) do not disrupt the nesting stack.<br />
+          v1.0.5 — Improved pairing accuracy for deeply nested structures and
+          tags with multiple attributes.<br />
+          v1.0.4 — Refined synchronization for empty tags (&lt;&gt;) and
+          switched to manual Range calculations for exact positional
+          accuracy.<br />
+          v1.0.0 - v1.0.3 — Initial releases. Implemented core bidirectional
+          sync and nesting analysis.
         </p>
 
         <img
@@ -204,17 +202,17 @@
 
         <h2 id="links">Links</h2>
         <p>
-          ・<a
-            href="https://github.com/auroraund/ghost-tag"
+          <a
+            href="https://github.com/auroraund/Ghost-Tag"
             target="_blank"
             rel="noopener noreferrer"
             >GitHub Repository</a
           ><br />
-          ・<a
-            href="https://marketplace.visualstudio.com/items?itemName=auroraund.ghost-tag"
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=Nurohive.ghosttag"
             target="_blank"
             rel="noopener noreferrer"
-            >VS Code Marketplace (Microsoft)</a
+            >VS Code Marketplace</a
           >
         </p>
       </section>
