@@ -65,7 +65,7 @@ a {
 }
 
 html {
-  font-size: 13px;
+  font-size: 16px;
 }
 html body {
   font-family: "Inter", sans-serif;
@@ -97,7 +97,7 @@ html body header {
   transition: height 0.45s ease, padding 0.45s ease, font-size 0.45s ease, background-color 0.45s ease, border-color 0.45s ease;
 }
 html body header h1 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 html body header #header-icon-and-logo-container {
