@@ -138,10 +138,11 @@
           alt=""
           style="width: 20px; margin: auto"
         />
-        <h2 id="intro">Ghost Tag：リアルタイム双方向タグ自動同期</h2>
+        <h2 id="intro">About</h2>
         <p>
-          Ghost Tag は、精度・速度・構造解析の安定性を追求して設計された VS Code
-          向けの高性能な双方向タグ自動更新拡張機能です。
+          Ghost
+          Tag（ゴーストタグ）は、精度と処理速度、構造解析の安定性を追求して開発したVS
+          Code向けの双方向タグ自動同期拡張機能。スタックベースのペアリングアルゴリズムにより、ネストの深い複雑なHTML/XML構造においても開始タグと閉じタグの変更を正確かつリアルタイムに追跡します。
         </p>
 
         <img
@@ -150,16 +151,11 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="key-features">主な特徴と機能</h2>
+        <h2 id="key-features">Features</h2>
         <p>
-          双方向リアルタイム同期 —
-          開始タグと閉じタグの変更をリアルタイムかつシームレスに同期します。<br />
-          階層構造のコンテキスト認識 —
-          スタックベースのペアリングアルゴリズムにより、深いネスト構造を正確に追跡します。<br />
-          衝突防止・マルチカーソル対応 —
-          スマートなマルチカーソル処理により、テキスト崩れや不正な書き換えを防ぎます。<br />
-          属性・自己完結タグ対応 — 複雑な属性を持つタグや自己完結型タグ（&lt;img
-          /&gt;, &lt;br /&gt; など）を正しく認識します。
+          開始タグと閉じタグの変更をリアルタイムに双方向同期します。スマートなマルチカーソル処理と衝突防止機構を備え、複数箇所の同時編集時にもテキスト崩れや意図しない書き換えを防ぎます。属性を持つタグや自己完結型タグ（&lt;img
+          /&gt;, &lt;br /&gt;
+          など）の構造も正確に判定し、快適なコード編集環境を実現します。
         </p>
 
         <img
@@ -168,12 +164,12 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="supported-languages">対応言語</h2>
+        <h2 id="supported-languages">Supported Languages</h2>
         <p>
-          ・HTML / XML<br />
-          ・React (JSX / TSX)<br />
-          ・Vue / Svelte<br />
-          ・PHP / Blade
+          HTML / XML<br />
+          React (JSX / TSX)<br />
+          Vue / Svelte<br />
+          PHP / Blade
         </p>
 
         <img
@@ -182,17 +178,16 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="changelog">更新履歴 (Changelog)</h2>
+        <h2 id="changelog">Changelog</h2>
         <p>
-          <strong>v1.0.6</strong> — 自己完結型タグのサポート修正。&lt;img /&gt;
-          や &lt;br /&gt;
-          などの要素がネストスタックを崩さないよう修正。正規表現の強化。<br />
-          <strong>v1.0.5</strong> —
-          複数属性を持つタグの対応、深層ネスト構造でのペアリング精度を改善。<br />
-          <strong>v1.0.4</strong> —
-          空タグ（&lt;&gt;）操作時の同期処理を改善。座標計算を手動Range計算に切り替え、位置精度を100%化。<br />
-          <strong>v1.0.0 - v1.0.3</strong> —
-          初版リリース。基本機能と双方向同期・ネスト解析を実装。
+          v1.0.6 — 自己完結型タグ（&lt;img /&gt;, &lt;br /&gt;
+          など）がネストスタックを崩さないよう判定ロジックと正規表現を強化。<br />
+          v1.0.5 —
+          複数属性を持つタグへの対応と、深層ネスト構造でのペアリング精度を向上。<br />
+          v1.0.4 —
+          空タグ（&lt;&gt;）操作時の同期処理を改善。手動Range計算への切り替えにより位置精度を最適化。<br />
+          v1.0.0 - v1.0.3 —
+          初版リリース。基本機能である双方向同期とネスト解析を実装。
         </p>
 
         <img
@@ -201,19 +196,19 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="links">リンク</h2>
+        <h2 id="links">Links</h2>
         <p>
-          ・<a
+          <a
             href="https://github.com/auroraund/Ghost-Tag"
             target="_blank"
             rel="noopener noreferrer"
             >GitHub Repository</a
           ><br />
-          ・<a
+          <a
             href="https://marketplace.visualstudio.com/items?itemName=Nurohive.ghosttag"
             target="_blank"
             rel="noopener noreferrer"
-            >VS Code Marketplace (Microsoft)</a
+            >VS Code Marketplace</a
           >
         </p>
       </section>
