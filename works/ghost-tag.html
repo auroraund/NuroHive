@@ -178,31 +178,13 @@
           style="width: 20px; margin: auto"
         />
 
-        <h2 id="changelog">Changelog</h2>
-        <p>
-          v1.0.6 — 自己完結型タグ（&lt;img /&gt;, &lt;br /&gt;
-          など）がネストスタックを崩さないよう判定ロジックと正規表現を強化。<br />
-          v1.0.5 —
-          複数属性を持つタグへの対応と、深層ネスト構造でのペアリング精度を向上。<br />
-          v1.0.4 —
-          空タグ（&lt;&gt;）操作時の同期処理を改善。手動Range計算への切り替えにより位置精度を最適化。<br />
-          v1.0.0 - v1.0.3 —
-          初版リリース。基本機能である双方向同期とネスト解析を実装。
-        </p>
-
-        <img
-          src="/images/main-logo.png"
-          alt=""
-          style="width: 20px; margin: auto"
-        />
-
         <h2 id="links">Links</h2>
         <p>
           <a
             href="https://github.com/auroraund/Ghost-Tag"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub Repository</a
+            >auroraund/Ghost-Tag</a
           ><br />
           <a
             href="https://marketplace.visualstudio.com/items?itemName=Nurohive.ghosttag"
@@ -211,6 +193,20 @@
             >VS Code Marketplace</a
           >
         </p>
+
+        <img
+          src="/images/main-logo.png"
+          alt=""
+          style="width: 20px; margin: auto"
+        />
+
+        <h2 id="articles-section">Git Log</h2>
+        <div class="git-history">
+          <h3>Recent Updates</h3>
+          <ul id="commit-list">
+            Loading...
+          </ul>
+        </div>
       </section>
     </main>
     <footer>
@@ -269,5 +265,6 @@
     <script src="/js/header-responsive.js"></script>
     <script src="/js/masonry.js"></script>
     <script src="/js/thumbnail-zoom.js"></script>
+    <script src="/js/github-api-ghost-tag.js"></script>
   </body>
 </html>
