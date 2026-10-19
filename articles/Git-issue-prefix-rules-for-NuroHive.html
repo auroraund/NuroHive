@@ -16,9 +16,13 @@
       const savedLang = localStorage.getItem("user_lang");
       if (!savedLang) {
         localStorage.setItem("user_lang", "en");
-        window.location.replace("/articles/Git-issue-prefix-rules-for-NuroHive-en.html");
+        window.location.replace(
+          "/articles/Git-issue-prefix-rules-for-NuroHive-en.html",
+        );
       } else if (savedLang === "en") {
-        window.location.replace("/articles/Git-issue-prefix-rules-for-NuroHive-en.html");
+        window.location.replace(
+          "/articles/Git-issue-prefix-rules-for-NuroHive-en.html",
+        );
       }
     </script>
     <meta charset="UTF-8" />
@@ -78,13 +82,14 @@
     <button id="theme-toggle"></button>
     <main>
       <div class="article-data">
-        <p id="article-title">NuroHiveのGit Issue接頭辞ルール</p>
+        <p id="article-title">NuroHiveのGitプレフィックスルール</p>
         <p id="article-subtitle">Git / 2026</p>
       </div>
+
       <article id="article-main-section">
-        <h2 id="intro">Gitコミット接頭辞チートシート</h2>
+        <h2 id="intro">よく使うGitのプレフィックスルール</h2>
         <p>
-          Gitの履歴をクリーンかつ読みやすく、構造的に保つために以下の標準化された接頭辞を使用してください。
+          コミット履歴を視認性よく綺麗に保つための、NuroHive運用におけるルール一覧。
         </p>
 
         <img
@@ -95,11 +100,10 @@
 
         <h2 id="development">機能追加とバグ修正</h2>
         <p>
-          <code>feat:</code> — 新しい機能や機能追加。<br />
-          <code>fix:</code> — バグや予期せぬ挙動の修正。<br />
-          <code>refactor:</code> —
-          挙動を変えずにコード構造を改善するリファクタリング。<br />
-          <code>perf:</code> — パフォーマンス、メモリ、実行速度の向上。
+          <code>feat/</code>— 新機能の追加<br />
+          <code>fix/</code>— バグや不具合の修正<br />
+          <code>refactor/</code>— 挙動を変えずにコードを綺麗に整理<br />
+          <code>perf/</code>— 処理速度やパフォーマンスの改善
         </p>
 
         <img
@@ -110,13 +114,11 @@
 
         <h2 id="maintenance">ドキュメントとメンテナンス</h2>
         <p>
-          <code>docs:</code> — ドキュメント、README、記事タイトルの更新。<br />
-          <code>style:</code> —
-          フォーマット調整、タイポ修正、UI余白の微調整。<br />
-          <code>chore:</code> — 依存関係、ビルドツール、設定ファイルの更新。
+          <code>docs/</code>— READMEやドキュメント類の更新<br />
+          <code>style/</code>— コード整列、タイポ修正、CSSの余白調整など<br />
+          <code>chore/</code>— パッケージ更新や設定ファイルの変更
         </p>
       </article>
-      
     </main>
     <footer>
       <form
