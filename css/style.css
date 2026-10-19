@@ -649,7 +649,6 @@ html body footer #footer-inline-copyright .copyright-inner .footer-links {
   border-radius: 8px;
   padding: 20px;
   max-width: var(--contents-max-width);
-  margin: 20px auto;
   transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease;
 }
 
