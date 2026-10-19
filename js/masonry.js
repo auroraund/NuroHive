@@ -4,8 +4,14 @@ const gutter = 10;
 const layoutItems = () => {
   const screenWidth = window.innerWidth;
   let numColumns = 2;
-  if (screenWidth > 1000) numColumns = 3;
-  else if (screenWidth <= 480) numColumns = 1;
+
+  if (screenWidth > 900) {
+    numColumns = 4;
+  } else if (screenWidth > 600) {
+    numColumns = 3;
+  } else if (screenWidth <= 300) {
+    numColumns = 1;
+  }
   const columnHeights = new Array(numColumns).fill(0);
   const containerWidth = container.offsetWidth;
   const itemWidth = (containerWidth - gutter * (numColumns - 1)) / numColumns;

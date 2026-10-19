@@ -7,7 +7,7 @@
   --main-off-color: rgb(20, 20, 20);
   transition: color 0.45s ease;
   --padding-inline: 30px;
-  --contents-max-width: 1200px;
+  --contents-max-width: 1000px;
 }
 
 html.dark {
@@ -65,7 +65,7 @@ a {
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 html body {
   font-family: "Inter", sans-serif;
@@ -315,13 +315,11 @@ html body main {
   ========================================================================== */
 }
 html body main .title-call {
-  font-size: 20rem;
+  font-size: 12rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  line-height: 15rem;
-  margin-bottom: 60px; /* フッター手前の余白を確保 */
 }
 html body main .title-call .title-call-track {
   display: flex;
