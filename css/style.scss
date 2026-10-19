@@ -686,3 +686,50 @@ html {
   transform: translate(2px, -2px) scale(1.1);
   background-color: rgba(0, 0, 0, 0.85); /* くっきり濃く */
 }
+
+/* Git履歴表示エリア */
+.git-history {
+  //background-color: var(--bg-color);
+  color: var(--main-off-color);
+  border: 1px solid var(--main-on-color);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: var(--contents-max-width);
+  margin: 20px auto;
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.git-history h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: var(--main-on-color);
+}
+
+#commit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#commit-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--main-on-color);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+#commit-list li:last-child {
+  border-bottom: none;
+}
+
+#commit-list span {
+  font-weight: bold;
+  color: var(--theme-toggle-color);
+  margin-right: 8px;
+  transition: color 0.45s ease;
+}
